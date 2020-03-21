@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for qoute in posts %}
+
+    {{ qoute.qoute }}
+    {{ qoute.said_by }}
+    {{ qoute.category_name }}
+
+{% endfor %}
+
+{% endblock %}
