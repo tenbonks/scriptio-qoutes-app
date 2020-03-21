@@ -3,9 +3,14 @@
 
 {% for qoute in posts %}
 
-    {{ qoute.qoute }}
-    {{ qoute.said_by }}
-    {{ qoute.category_name }}
+    <div class="row">
+        <div class="col s12">
+          <div class="card-panel light-blue">
+            <p class=" flow-text white-text">{{ qoute.qoute }}</p>
+          </div>
+          <p class="right-align">Said by <strong>{{ qoute.said_by }}</strong> | {{ qoute.category_name }}</p>
+        </div>
+      </div>
 
 {% endfor %}
 
