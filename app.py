@@ -16,6 +16,11 @@ mongo = PyMongo(app)
 def get_qoutes():
      return render_template("qoutes.html", posts=mongo.db.posts.find())
 
+@app.route("/post_qoute")
+def post_qoute():
+        return render_template("post_qoute.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=(os.environ.get("PORT")),
