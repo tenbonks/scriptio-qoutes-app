@@ -18,7 +18,15 @@ def get_qoutes():
 
 @app.route("/post_qoute")
 def post_qoute():
-        return render_template("post_qoute.html")
+        return render_template("post_qoute.html", categories=mongo.db.categories.find())
+
+# The function below will be called when submitting the form in post_qoute
+@app.route("/insert_qoute", methods=["POST"])
+def insert_qoute():
+    qoutes = mongo.db.posts
+    qoutes.insert_one(request.form.to_dict())
+    # redirect to get qoutes, which will render get_qoutes.html
+    return redirect(url_for("get_qoutes"))
 
 
 if __name__ == "__main__":
