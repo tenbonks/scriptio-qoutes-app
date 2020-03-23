@@ -20,17 +20,23 @@ def get_qoutes():
 def post_qoute():
         return render_template("post_qoute.html", categories=mongo.db.categories.find())
 
+
 # The function below will be called when submitting the form in post_qoute
 @app.route("/insert_qoute", methods=["POST"])
 def insert_qoute():
+    # target mongoDB posts, insert data from form into target
     qoutes = mongo.db.posts
     qoutes.insert_one(request.form.to_dict())
     # redirect to get qoutes, which will render get_qoutes.html
     return redirect(url_for("get_qoutes"))
 
+
+# this route will be called when a user want to edit a qoute
 @app.route('/edit_qoute/<qoute_id>')
 def edit_qoute(qoute_id):
+    # set a var to store the target post, targeted by _id
     the_qoute = mongo.db.posts.find_one({"_id": ObjectId(qoute_id)})
+    # used to display all categories on the select element
     all_categories = mongo.db.categories.find()
     return render_template("edit_qoute.html", qoute=the_qoute, categories=all_categories)
 
