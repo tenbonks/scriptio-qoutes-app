@@ -28,6 +28,12 @@ def insert_qoute():
     # redirect to get qoutes, which will render get_qoutes.html
     return redirect(url_for("get_qoutes"))
 
+@app.route('/edit_qoute/<qoute_id>')
+def edit_qoute(qoute_id):
+    the_qoute = mongo.db.posts.find_one({"_id": ObjectId(qoute_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template("edit_qoute.html", qoute=the_qoute, categories=all_categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
