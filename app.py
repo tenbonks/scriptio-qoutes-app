@@ -41,6 +41,20 @@ def edit_qoute(qoute_id):
     return render_template("edit_qoute.html", qoute=the_qoute, categories=all_categories)
 
 
+# this route will be called when submitting edit_qoute form 
+@app.route("/update_qoute/<qoute_id>", methods=["POST"])
+def update_qoute(qoute_id):
+    qoutes = mongo.db.posts
+    # use update to first target the document which has the same "_id", then update the fields with supplied values from the form
+    qoutes.update( {"_id": ObjectId(qoute_id)},
+    {
+        "qoute" : request.form.get("qoute"),
+        "said_by" : request.form.get("said_by"),
+        "category_name" : request.form.get("category_name")
+    })
+    return redirect(url_for("get_qoutes"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=(os.environ.get("PORT")),
