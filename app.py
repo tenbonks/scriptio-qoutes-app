@@ -55,6 +55,14 @@ def update_qoute(qoute_id):
     return redirect(url_for("get_qoutes"))
 
 
+# this route will be called when firing delete button on edit_qoute.html
+@app.route("/delete_qoute/<qoute_id>")
+def delete_qoute(qoute_id):
+    # remove post with matching id, then redirect to get_qoutes
+    mongo.db.posts.remove({"_id": ObjectId(qoute_id)})
+    return redirect(url_for("get_qoutes"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=(os.environ.get("PORT")),
