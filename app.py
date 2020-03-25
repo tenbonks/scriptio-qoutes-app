@@ -62,6 +62,15 @@ def delete_qoute(qoute_id):
     mongo.db.posts.remove({"_id": ObjectId(qoute_id)})
     return redirect(url_for("get_qoutes"))
 
+@app.route("/get_categories")
+def get_categories():
+    return render_template("get_categories.html", categories=mongo.db.categories.find())
+
+@app.route("/filter_qoutes/<category_name>")
+def filter_qoutes(category_name):
+    qoutes = mongo.db.posts
+    return render_template("filter_qoutes.html", posts=qoutes.find({"category_name": category_name}))
+    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
