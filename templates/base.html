@@ -23,13 +23,13 @@
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_qoutes')}}">Home</a></li>
                 <li><a href="{{ url_for('post_qoute')}}">Add Qoute</a></li>
-                <li><a href="collapsible.html">About</a></li>
+                <li><a href="{{ url_for('get_categories')}}">Categories</a></li>
               </ul>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
               <ul class="sidenav" id="mobile-demo">
                 <li><a href="{{ url_for('get_qoutes')}}">Home</a></li>
                 <li><a href="{{ url_for('post_qoute')}}">Add Qoute</a></li>
-                <li><a href="collapsible.html">About</a></li>
+                <li><a href="{{ url_for('get_categories')}}">Categories</a></li>
               </ul>
             </div>
           </nav>
