@@ -16,6 +16,26 @@
 
 <body>
 
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="{{ url_for('get_qoutes')}}" class="brand-logo"><img src="{{ url_for('static', filename='images/scriptio-logo.png') }}"  width="150px" height="auto" alt="Scriptio logo"></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('get_qoutes')}}">Home</a></li>
+                <li><a href="{{ url_for('post_qoute')}}">Add Qoute</a></li>
+                <li><a href="collapsible.html">About</a></li>
+              </ul>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <ul class="sidenav" id="mobile-demo">
+                <li><a href="{{ url_for('get_qoutes')}}">Home</a></li>
+                <li><a href="{{ url_for('post_qoute')}}">Add Qoute</a></li>
+                <li><a href="collapsible.html">About</a></li>
+              </ul>
+            </div>
+          </nav>
+                
+    </header>
+
     <div class="container">
 
         {% block content %}
@@ -33,7 +53,9 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('select').formSelect();
+            $('.sidenav').sidenav();
         });
+        
     </script>
     <!--  /LOAD SCRIPTS -->
 
