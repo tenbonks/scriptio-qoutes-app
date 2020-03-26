@@ -2,62 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scriptio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scriptio</title>
 
-    <!-- LOAD STYLES  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
+  <!-- LOAD STYLES  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
 
-    <!-- /LOAD STYLES -->
+  <!-- /LOAD STYLES -->
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="{{ url_for('get_quotes')}}" class="brand-logo"><img src="{{ url_for('static', filename='images/scriptio-logo.png') }}"  width="150px" height="auto" alt="Scriptio logo"></a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_quotes')}}">Home</a></li>
-                <li><a href="{{ url_for('post_quote')}}">Add quote</a></li>
-                <li><a href="{{ url_for('get_categories')}}">Categories</a></li>
-              </ul>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="sidenav" id="mobile-demo">
-                <li><a href="{{ url_for('get_quotes')}}">Home</a></li>
-                <li><a href="{{ url_for('post_quote')}}">Add quote</a></li>
-                <li><a href="{{ url_for('get_categories')}}">Categories</a></li>
-              </ul>
-            </div>
-          </nav>
-                
-    </header>
-
-    <div class="container">
-
-        {% block content %}
-
-        <!-- content injected here -->
-
-        {% endblock %}
-
+  <header>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="{{ url_for('get_quotes')}}" class="brand-logo"><img
+              src="{{ url_for('static', filename='images/scriptio-logo.png') }}" width="150px" height="auto"
+              alt="Scriptio logo"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('get_quotes')}}">Home</a></li>
+            <li><a href="{{ url_for('post_quote')}}">Add quote</a></li>
+            <li><a href="{{ url_for('get_categories')}}">Categories</a></li>
+          </ul>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
     </div>
 
-    <!--  LOAD SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('select').formSelect();
-            $('.sidenav').sidenav();
-        });
-        
-    </script>
-    <!--  /LOAD SCRIPTS -->
+    <!-- the code below is for materialize mobile-nav -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="{{ url_for('get_quotes')}}">Home</a></li>
+      <li><a href="{{ url_for('post_quote')}}">Add quote</a></li>
+      <li><a href="{{ url_for('get_categories')}}">Categories</a></li>
+    </ul>
+  </header>
+
+  <div class="container">
+
+    {% block content %}
+
+    <!-- content injected here -->
+
+    {% endblock %}
+
+  </div>
+
+  <!--  LOAD SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('select').formSelect();
+      $('.sidenav').sidenav();
+    });
+  </script>
+  <!--  /LOAD SCRIPTS -->
 
 </body>
 
