@@ -1,11 +1,18 @@
-#qoute-card-info{
-    margin-bottom: 0;
-}
-
+/* SPACING STYLES */
 .card-panel .row{
     margin-bottom: 0;
 }
 
+#qoute-card-info{
+    margin-bottom: 0;
+}
+
+.m_10 {
+    margin: 10vh;
+}
+/* /SPACING STYLES */
+
+/* CUSTOM STYLES */
 .btn_small {
     height: 24px;
     width: 50px;
@@ -13,3 +20,26 @@
     margin: 5px 5px;
     padding: 0 0.5em;
 }
+/*  /CUSTOM STYLES */
+
+/*  COLORS */
+.primary_purple_bg {
+    background-color: #542344;
+}
+
+.secondary_purple_bg {
+    background-color: #AF929D;
+}
+
+.off_white_bg {
+    background-color: #E5FFDE;
+}
+
+.off_white_text{
+    color:  #E5FFDE;
+}
+
+a {
+    color: #542344;
+}
+/*  /COLORS */
