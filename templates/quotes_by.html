@@ -23,7 +23,7 @@
             <a href="{{ url_for('edit_quote', quote_id=quote._id) }}" class="waves-effect waves-light btn btn_small grey">Edit</a>
           </div>        
           <div class="col s8">
-            <p class="right-align" id="quote-card-info" >Said by <strong>{{ quote.said_by }}</strong> | {{ quote.category_name }}</p>
+            <p class="right-align" id="quote-card-info" >Said by <strong>{{ quote.said_by }}</strong> | <strong><a href="{{ url_for('filter_quotes', category_name=quote.category_name) }}">{{ quote.category_name }}</a></strong></p>
           </div>
         </div>
       </div>
