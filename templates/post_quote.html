@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Post quote</h3>
+
+<div class="row">
+    <div class="col s12">
+      <div class="center-align m_10">
+        <h4>Post quote</h4>
+        <hr>
+      </div>
+    </div>
+  </div>
+
 
 <div class="row">
     <form action="{{ url_for('insert_quote') }}" method="POST" class="col s12">
@@ -9,7 +18,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">notes</i>
                 <textarea name="quote" id="quote icon_quote" class="materialize-textarea" rows="2"></textarea>
-                <label for="icon_prefix">quote</label>
+                <label for="icon_prefix">Quote</label>
             </div>
         </div>
 
@@ -28,7 +37,7 @@
                     <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
                     {% endfor %}
                   </select>
-                  <label>quote Category</label>
+                  <label>Quote Category</label>
             </div>
 
         </div>
