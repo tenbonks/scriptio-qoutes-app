@@ -72,6 +72,11 @@ def filter_qoutes(category_name):
     return render_template("filter_qoutes.html", posts=qoutes.find({"category_name": category_name}))
     
 
+@app.route("/qoutes_by/<said_by>")
+def qoutes_by(said_by):
+    qoutes = mongo.db.posts
+    return render_template("qoutes_by.html", posts=qoutes.find({"said_by": said_by}))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=(os.environ.get("PORT")),
