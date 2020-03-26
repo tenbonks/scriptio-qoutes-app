@@ -75,7 +75,7 @@ def filter_qoutes(category_name):
 @app.route("/qoutes_by/<said_by>")
 def qoutes_by(said_by):
     qoutes = mongo.db.posts
-    return render_template("qoutes_by.html", posts=qoutes.find({"said_by": said_by}))
+    return render_template("qoutes_by.html", posts=qoutes.find({"said_by": said_by}), page_title="Filtering qoutes by name : " + said_by)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
