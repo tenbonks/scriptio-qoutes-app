@@ -1,4 +1,9 @@
 /* SPACING STYLES */
+
+.fill_screen {
+    min-height: 85vh;
+}
+
 .card-panel .row{
     margin-bottom: 0;
 }
