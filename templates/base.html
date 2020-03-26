@@ -19,7 +19,7 @@
   <header>
     <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper primary_purple_bg">
           <a href="{{ url_for('get_quotes')}}" class="brand-logo"><img
               src="{{ url_for('static', filename='images/scriptio-logo.png') }}" width="150px" height="auto"
               alt="Scriptio logo"></a>
@@ -41,6 +41,7 @@
     </ul>
   </header>
 
+  <div class="off_white_bg">
   <div class="container">
 
     {% block content %}
@@ -49,6 +50,7 @@
 
     {% endblock %}
 
+  </div>
   </div>
 
   <!--  LOAD SCRIPTS -->
