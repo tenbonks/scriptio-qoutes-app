@@ -69,7 +69,7 @@ def get_categories():
 @app.route("/filter_quotes/<category_name>")
 def filter_quotes(category_name):
     quotes = mongo.db.posts
-    return render_template("filter_quotes.html", posts=quotes.find({"category_name": category_name}))
+    return render_template("filter_quotes.html", posts=quotes.find({"category_name": category_name}), page_title="Filtering quotes by category : " + category_name)
     
 
 @app.route("/quotes_by/<said_by>")
