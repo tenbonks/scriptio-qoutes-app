@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>{{ page_title }}</h3>
-
+<div class="row">
+  <div class="col s12">
+    <div class="center-align m_10">
+      <h4>{{ page_title }}</h4>
+      <hr>
+    </div>
+  </div>
+</div>
 {% for quote in posts %}
 
 <div class="row">
