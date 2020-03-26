@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Filter qoutes</h3>
+<h3>Filter quotes</h3>
 <hr>
-<p>Find the qoutes that you are in the mood for, maybe something a bit uplifting to brighten up the day? Perhaps something funny to put the jig back into your day.</p>
+<p>Find the quotes that you are in the mood for, maybe something a bit uplifting to brighten up the day? Perhaps something funny to put the jig back into your day.</p>
 
 <div class="row">
     {% for cat in categories %}
     <div class="col s12 m6 l4" id="category-filter-btn">
-        <a href="{{ url_for('filter_qoutes', category_name=cat.category_name)}}"class="waves-effect waves-light btn-large" value="{{ cat.category_name }}">{{ cat.category_name }}</a>
+        <a href="{{ url_for('filter_quotes', category_name=cat.category_name)}}"class="waves-effect waves-light btn-large" value="{{ cat.category_name }}">{{ cat.category_name }}</a>
     </div>
     {% endfor %}
 </div>
