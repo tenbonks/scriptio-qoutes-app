@@ -26,6 +26,11 @@
     padding: 0 0.5em;
 }
 
+#category-filter-btn {
+    margin: 10px 0;
+    text-align: center;
+}
+
 /*  /CUSTOM STYLES */
 
 /*  COLORS */
@@ -59,7 +64,9 @@
     color: #E5FFDE;
 }
 
-
+.opaque_bg {
+    background-color: rgba(0,0,0,0.2);
+}
 /*  /COLORS */
 
 /* BACKGROUND IMAGE */
