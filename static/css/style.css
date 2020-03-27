@@ -66,6 +66,7 @@
 
 .opaque_bg {
     background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
 }
 /*  /COLORS */
 
