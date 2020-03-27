@@ -19,7 +19,7 @@
 <div class="row">
   {% for cat in categories %}
   <div class="col s12 m6 l4" id="category-filter-btn">
-    <a href="{{ url_for('filter_quotes', category_name=cat.category_name)}}" class="waves-effect waves-light btn-large"
+    <a href="{{ url_for('filter_quotes', category_name=cat.category_name)}}" class="waves-effect waves-light btn-large secondary_purple_bg"
       value="{{ cat.category_name }}">{{ cat.category_name }}</a>
   </div>
   {% endfor %}
