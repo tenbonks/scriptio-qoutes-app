@@ -44,7 +44,21 @@
     color:  #E5FFDE;
 }
 
+.primary_purple_text{
+    color: #542344
+}
+
 a {
     color: #542344;
 }
 /*  /COLORS */
+
+/* BACKGROUND IMAGE */
+.bg_img {
+    background-color: #ffffff;
+    background-image: url(https://www.transparenttextures.com/patterns/escheresque-dark.png);
+    background-attachment: fixed;
+}
+
+
+/*  /BACKGROUND IMAGE */
