@@ -4,20 +4,25 @@
 
 <div class="row">
     <div class="col s12">
-      <div class="center-align m_10">
-        <h4>Post quote</h4>
-        <hr>
-      </div>
+        <div class="center-align m_10">
+            <div class="primary_purple_text">
+                <h4>Post quote</h4>
+            </div>
+            <hr>
+        </div>
     </div>
-  </div>
+</div>
 
 
 <div class="row">
-    <form action="{{ url_for('insert_quote') }}" method="POST" class="col s12">
+
+    <form action="{{ url_for('insert_quote') }}" method="POST"
+        class="col s12 card-panel secondary_purple_bg white-text">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">notes</i>
-                <textarea name="quote" id="quote icon_quote" class="materialize-textarea" rows="2"></textarea>
+                <textarea name="quote" id="quote icon_quote" class="materialize-textarea" rows="2"
+                    class="validate"></textarea>
                 <label for="icon_prefix">Quote</label>
             </div>
         </div>
@@ -30,14 +35,14 @@
             </div>
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">poll</i>
-                <select name="category_name" id="category_name">
+                <select name="category_name" id="category_name" class="validate">
                     <option value="" disabled selected>Choose Category</option>
 
                     {% for cat in categories %}
                     <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
                     {% endfor %}
-                  </select>
-                  <label>Quote Category</label>
+                </select>
+                <label>Quote Category</label>
             </div>
 
         </div>
@@ -46,10 +51,12 @@
             <div class="col center-align s12">
                 <button class="btn-floating btn-large waves-effect waves-light light-blue" type="submit">
                     <i class="material-icons">add_comment</i>
-                  </button>
+                </button>
             </div>
         </div>
+
     </form>
+
 </div>
 
 {% endblock %}
