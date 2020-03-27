@@ -25,6 +25,7 @@
     margin: 5px 5px;
     padding: 0 0.5em;
 }
+
 /*  /CUSTOM STYLES */
 
 /*  COLORS */
@@ -48,9 +49,17 @@
     color: #542344
 }
 
-a {
+#content a {
     color: #542344;
 }
+
+#content a:hover {
+    background-color: #542344;;
+    border-radius: 3px;
+    color: #E5FFDE;
+}
+
+
 /*  /COLORS */
 
 /* BACKGROUND IMAGE */
