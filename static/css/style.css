@@ -15,6 +15,11 @@
 .m_10 {
     margin: 10vh;
 }
+
+/* this style fixes bug with adding margin to each row, this will fill the gap between content and footer */
+.p_bottom_20 {
+    padding-bottom: 20px;
+}
 /* /SPACING STYLES */
 
 /* CUSTOM STYLES */
