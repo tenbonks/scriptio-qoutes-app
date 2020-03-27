@@ -4,21 +4,24 @@
 
 <div class="row">
     <div class="col s12">
-      <div class="center-align m_10">
-        <h4>Edit quote</h4>
-        <hr>
-      </div>
+        <div class="center-align m_10">
+            <div class="primary_purple_text">
+                <h4>Edit quote</h4>
+            </div>
+            <hr>
+        </div>
     </div>
-  </div>
+</div>
 
 <div class="row">
 
-    
+
     <form action="{{ url_for('update_quote', quote_id=quote._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">notes</i>
-                <textarea name="quote" id="quote icon_quote" class="materialize-textarea" value="{{quote.quote}}">{{ quote.quote }}</textarea>
+                <textarea name="quote" id="quote icon_quote" class="materialize-textarea"
+                    value="{{quote.quote}}">{{ quote.quote }}</textarea>
                 <label for="icon_prefix">Quote</label>
             </div>
         </div>
@@ -35,37 +38,37 @@
                     <option value="" disabled selected>Choose Category</option>
 
                     {% for cat in categories %}
-                        {% if cat.category_name == quote.category_name %}
-                            <option value="{{ cat.category_name }}" selected>{{ cat.category_name }}</option>
-                        {% else %}
-                        <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
-                        {% endif %}
+                    {% if cat.category_name == quote.category_name %}
+                    <option value="{{ cat.category_name }}" selected>{{ cat.category_name }}</option>
+                    {% else %}
+                    <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
+                    {% endif %}
                     {% endfor %}
-                  </select>
-                  <label>Quote Category</label>
+                </select>
+                <label>Quote Category</label>
             </div>
 
         </div>
 
         <div class="row">
-            <div class="col center-align s12">  
-                  <button class="btn-floating btn-large waves-effect waves-light light-blue">
+            <div class="col center-align s12">
+                <button class="btn-floating btn-large waves-effect waves-light light-blue">
                     <i class="material-icons">edit</i>
-                  </button>
+                </button>
             </div>
-            
+
         </div>
     </form>
 
-    
+
     <!-- section below is for the delete quote button -->
     <form action="{{ url_for('delete_quote', quote_id=quote._id) }}">
         <div class="row">
-            <div class="col center-align s12">  
-                  <p><strong>CAUTION!</strong> click the red button to delete post.</p>  
-                  <button class="btn-floating btn-large waves-effect waves-light red">
+            <div class="col center-align s12">
+                <p><strong>CAUTION!</strong> click the red button to delete post.</p>
+                <button class="btn-floating btn-large waves-effect waves-light red">
                     <i class="material-icons">delete</i>
-                  </button>
+                </button>
             </div>
         </div>
     </form>
