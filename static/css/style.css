@@ -31,6 +31,10 @@
     padding: 0 0.5em;
 }
 
+.card-panel {
+    padding-bottom: 7px;
+}
+
 #category-filter-btn {
     margin: 10px 0;
     text-align: center;
