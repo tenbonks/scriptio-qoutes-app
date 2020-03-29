@@ -75,7 +75,10 @@ def filter_quotes(category_name):
 @app.route("/quotes_by/<said_by>")
 def quotes_by(said_by):
     quotes = mongo.db.posts
-    return render_template("quotes_by.html", posts=quotes.find({"said_by": said_by}), page_title="Filtering quotes by name : " + said_by)
+    res = quotes.find({"said_by": said_by})
+    total_quotes = res.count()
+    print(total_quotes)
+    return render_template("quotes_by.html", posts=res, total_quotes=said_by + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by name")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
