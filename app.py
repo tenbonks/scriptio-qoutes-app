@@ -66,12 +66,17 @@ def delete_quote(quote_id):
 def get_categories():
     return render_template("get_categories.html", categories=mongo.db.categories.find())
 
+
+# ROUTE FOR FILTERING QUOTES BY "CATEGORY"
 @app.route("/filter_quotes/<category_name>")
 def filter_quotes(category_name):
     quotes = mongo.db.posts
-    return render_template("filter_quotes.html", posts=quotes.find({"category_name": category_name}), page_title="Filtering quotes by category : " + category_name)
+    res = quotes.find({"category_name": category_name})
+    total_quotes = res.count()
+    return render_template("filter_quotes.html", posts=res, total_quotes=category_name + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by category")
     
 
+# ROUTE FOR FILTERING QUOTES BY "SAID_BY"
 @app.route("/quotes_by/<said_by>")
 def quotes_by(said_by):
     quotes = mongo.db.posts
