@@ -13,7 +13,7 @@
 }
 
 .m_10 {
-    margin: 10vh;
+    margin: 10vh 0;
 }
 
 /* this style fixes bug with adding margin to each row, this will fill the gap between content and footer */
@@ -38,6 +38,15 @@
 #category-filter-btn {
     margin: 10px 0;
     text-align: center;
+}
+
+#page_heading {
+    max-width: 350px;
+    background-color: #542344;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10vh auto;
+    padding: 4px 5px;
 }
 
 /*  /CUSTOM STYLES */
