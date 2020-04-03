@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "scriptio"
 app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 
+# mongo instance, that will use config vars above
 mongo = PyMongo(app)
 
 @app.route("/")
