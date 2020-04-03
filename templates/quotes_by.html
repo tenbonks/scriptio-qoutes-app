@@ -17,39 +17,38 @@
 
 <div class="opaque_bg">
 
-{% for quote in posts %}
+  {% for quote in posts %}
 
-<div class="row">
-  <div class="col s12">
-    <div class="card-panel secondary_purple_bg white-text">
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel secondary_purple_bg white-text">
 
-      <div class="row">
-        <div class="col s12">
-          <p class="flow-text">"{{ quote.quote }}"</p>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="row">
-        <div class="valign-wrapper">
-          <div class="col s4">
-            <a href="{{ url_for('edit_quote', quote_id=quote._id) }}"
-              ><strong>Edit</strong></a>
-              
+        <div class="row">
+          <div class="col s12">
+            <p class="flow-text">"{{ quote.quote }}"</p>
           </div>
-          <div class="col s8">
-            <p class="right-align" id="quote-card-info">Said by <strong>{{ quote.said_by }}</strong> | <strong><a
-                  href="{{ url_for('filter_quotes', category_name=quote.category_name) }}">{{ quote.category_name }}</a></strong>
-            </p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="col s4">
+              <a href="{{ url_for('edit_quote', quote_id=quote._id) }}"><strong>Edit</strong></a>
+
+            </div>
+            <div class="col s8">
+              <p class="right-align" id="quote-card-info">Said by <strong>{{ quote.said_by }}</strong> | <strong><a
+                    href="{{ url_for('filter_quotes', category_name=quote.category_name) }}">{{ quote.category_name }}</a></strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-{% endfor %}
+  {% endfor %}
 
 </div>
 
