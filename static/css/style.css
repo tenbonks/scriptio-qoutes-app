@@ -1,3 +1,7 @@
+body {
+    font-family: "Nunito", sans-serif;
+}
+
 /* SPACING STYLES */
 
 .fill_screen {
@@ -64,14 +68,6 @@
         background-color: #AF929D;
     }
 
-    .off_white_bg {
-        background-color: #E5FFDE;
-    }
-
-    .off_white_text {
-        color: #E5FFDE;
-    }
-
     .primary_purple_text {
         color: #542344
     }
@@ -100,6 +96,4 @@
         background-image: url(https://www.transparenttextures.com/patterns/egg-shell.png);
         background-attachment: fixed;
     }
-
-
     /*  /BACKGROUND IMAGE */
