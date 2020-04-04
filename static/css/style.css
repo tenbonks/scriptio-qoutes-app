@@ -25,6 +25,14 @@ body {
     padding-bottom: 20px;
 }
 
+.p_20 {
+    padding: 15px;
+}
+
+.m_10 {
+    margin: 10px auto;
+}
+
 .stretch_w_90 {
     width: 90%;
 }
