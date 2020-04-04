@@ -82,13 +82,6 @@ body {
     box-sizing: content-box;
 }
 
-.secondary_btn_red i {
-    color: red !important;
-}
-
-.secondary_btn_red i:hover {
-    color: white !important;
-}
 .secondary_btn_red:hover {
     background-color: red;
     color: white;
@@ -157,6 +150,7 @@ strong {
 }
 
 .input-field input,
+textarea.materialize-textarea,
 .materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #fff !important;
     box-shadow: 0 1px 0 0 #fff !important;
