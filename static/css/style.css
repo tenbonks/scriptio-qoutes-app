@@ -33,6 +33,14 @@ body {
     padding: 15px;
 }
 
+.p_10 {
+    padding: 10px;
+}
+
+.b_radius  {
+    border-radius: 5px;
+}
+
 .stretch_w_90 {
     width: 90%;
 }
