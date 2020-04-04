@@ -17,9 +17,23 @@
 
 <div class="opaque_bg">
 
-  <div class="center-align">
-    <h5>{{ no_records_str }}</h5>
+
+
+  {% if total_quotes_count == 0 %}
+  <div class="row center-align p_20">
+    <div class="col s12 m_10 primary_purple_text">
+      <h5>Oops, no quotes to be seen here</h5>
+    </div>
+    <div class="col s12">
+      <hr>
+    </div>
+    <div class="col s12 m_10">
+      <a href="{{ url_for('post_quote') }}" class="waves-effect waves-light btn secondary_purple_bg white-text">Add
+        quote</a>
+    </div>
   </div>
+
+  {% endif %}
 
   {% for quote in posts %}
 
