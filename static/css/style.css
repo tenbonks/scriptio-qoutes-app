@@ -20,6 +20,10 @@ body {
     margin: 10vh 0;
 }
 
+.my_10px {
+    margin: 10px auto;
+}
+
 /* this style fixes bug with adding margin to each row, this will fill the gap between content and footer */
 .p_bottom_20 {
     padding-bottom: 20px;
