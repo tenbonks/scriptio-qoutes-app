@@ -25,6 +25,9 @@ body {
     padding-bottom: 20px;
 }
 
+.stretch_w_90 {
+    width: 90%;
+}
 /* /SPACING STYLES */
 
 /* CUSTOM STYLES */
