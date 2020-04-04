@@ -76,12 +76,7 @@ def filter_quotes(category_name):
     res = quotes.find({"category_name": category_name})
     total_quotes = res.count()
     
-    no_records_str = ""
-    if total_quotes == 0:
-        no_records_str = "Oops, no quotes to be seen here"
-    
-
-    return render_template("filter_quotes.html", posts=res, total_quotes=category_name + " | " + str(total_quotes) + " quotes", no_records_str=no_records_str, page_title="Filtering quotes by category")
+    return render_template("filter_quotes.html", posts=res, total_quotes_count=total_quotes,  total_quotes=category_name + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by category")
     
 
 # ROUTE FOR FILTERING QUOTES BY "SAID_BY"
