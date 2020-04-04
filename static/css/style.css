@@ -37,13 +37,14 @@ body {
     padding: 10px;
 }
 
-.b_radius  {
+.b_radius {
     border-radius: 5px;
 }
 
 .stretch_w_90 {
     width: 90%;
 }
+
 /* /SPACING STYLES */
 
 /* CUSTOM STYLES */
@@ -63,6 +64,7 @@ body {
     margin: 10px 0;
     text-align: center;
 }
+
 #page_heading {
     max-width: 350px;
     background-color: #542344;
@@ -80,31 +82,44 @@ body {
     box-sizing: content-box;
 }
 
+.secondary_btn_red i {
+    color: red !important;
+}
+
+.secondary_btn_red i:hover {
+    color: white !important;
+}
 .secondary_btn_red:hover {
     background-color: red;
     color: white;
 }
+
 /*  /CUSTOM STYLES */
 
 /*  COLORS + FONTS*/
 .primary_purple_bg {
     background-color: #542344;
 }
+
 .secondary_purple_bg {
     background-color: #AF929D;
 }
+
 .primary_purple_text {
     color: #542344
 }
+
 #content a {
     color: #542344;
 }
+
 #content a:hover {
     background-color: #542344;
     ;
     border-radius: 3px;
     color: #E5FFDE;
 }
+
 .opaque_bg {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -113,6 +128,7 @@ body {
 strong {
     font-weight: 600;
 }
+
 /*  /COLORS + FONTS */
 
 /* BACKGROUND IMAGE */
@@ -121,4 +137,41 @@ strong {
     background-image: url(https://www.transparenttextures.com/patterns/clean-textile.png);
     background-attachment: fixed;
 }
+
 /*  /BACKGROUND IMAGE */
+
+
+/* THE CODE BELOW IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
+
+.material-icons {
+    color: #fff !important;
+}
+
+.material-icons.active {
+    color: #542344 !important;
+}
+
+.input-field input+label,
+.materialize-textarea:focus:not([readonly])+label {
+    color: #fff !important;
+}
+
+.input-field input,
+.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+}
+
+
+.input-field input:focus+label,
+.materialize-textarea:focus:not([readonly])+label {
+    color: #542344 !important;
+}
+
+.input-field input:focus,
+.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #542344 !important;
+    box-shadow: 0 1px 0 0 #542344 !important;
+}
+
+/* THE CODE ABOVE IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
