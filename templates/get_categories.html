@@ -9,8 +9,7 @@
       </div>
       <hr>
       <div class="white-text">
-        <p>Find the quotes you're in the mood for, maybe something funny to add a spring to your day?</p>
-        <p>Maybe a daily dose of mindfulness?</p>
+        <p>Look up quotes by category</p>
       </div>
     </div>
   </div>
@@ -22,7 +21,7 @@
     {% for cat in categories %}
     <div class="col s12 m6 l4" id="category-filter-btn">
       <a href="{{ url_for('filter_quotes', category_name=cat.category_name)}}"
-        class="waves-effect waves-light btn-large secondary_purple_bg"
+        class="waves-effect waves-light btn-large secondary_purple_bg stretch_w_90"
         value="{{ cat.category_name }}">{{ cat.category_name }}</a>
     </div>
     {% endfor %}
