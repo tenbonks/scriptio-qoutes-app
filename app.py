@@ -12,6 +12,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 # mongo instance, that will use config vars above
 mongo = PyMongo(app)
 
+# this route is for the homepage, its called get_quotes because thats the main function of the page
 @app.route("/")
 @app.route("/get_quotes")
 def get_quotes():
