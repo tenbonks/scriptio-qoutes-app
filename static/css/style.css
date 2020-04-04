@@ -40,60 +40,50 @@ body {
     padding-bottom: 7px;
 }
 
+#category-filter-btn {
+    margin: 10px 0;
+    text-align: center;
+}
+#page_heading {
+    max-width: 350px;
+    background-color: #542344;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10vh auto;
+    padding: 4px 5px;
+    box-shadow: 1px 2px 5px;
+}
+/*  /CUSTOM STYLES */
 
+/*  COLORS */
+.primary_purple_bg {
+    background-color: #542344;
+}
+.secondary_purple_bg {
+    background-color: #AF929D;
+}
+.primary_purple_text {
+    color: #542344
+}
+#content a {
+    color: #542344;
+}
+#content a:hover {
+    background-color: #542344;
+    ;
+    border-radius: 3px;
+    color: #E5FFDE;
+}
+.opaque_bg {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+/*  /COLORS */
 
-    #category-filter-btn {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    #page_heading {
-        max-width: 350px;
-        background-color: #542344;
-        border-radius: 10px;
-        text-align: center;
-        margin: 10vh auto;
-        padding: 4px 5px;
-        box-shadow: 1px 2px 5px;
-    }
-
-    /*  /CUSTOM STYLES */
-
-    /*  COLORS */
-    .primary_purple_bg {
-        background-color: #542344;
-    }
-
-    .secondary_purple_bg {
-        background-color: #AF929D;
-    }
-
-    .primary_purple_text {
-        color: #542344
-    }
-
-    #content a {
-        color: #542344;
-    }
-
-    #content a:hover {
-        background-color: #542344;
-        ;
-        border-radius: 3px;
-        color: #E5FFDE;
-    }
-
-    .opaque_bg {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-    }
-
-    /*  /COLORS */
-
-    /* BACKGROUND IMAGE */
-    .bg_img {
-        background-color: #dbdbdb;
-        background-image: url(https://www.transparenttextures.com/patterns/egg-shell.png);
-        background-attachment: fixed;
-    }
-    /*  /BACKGROUND IMAGE */
+/* BACKGROUND IMAGE */
+.bg_img {
+    background-color: #fff;
+    background-image: url(https://www.transparenttextures.com/patterns/clean-textile.png);
+    background-attachment: fixed;
+}
+/*  /BACKGROUND IMAGE */
