@@ -135,6 +135,7 @@ strong {
 
 
 /* THE CODE BELOW IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
+/* these styles overide materialize form colors, I found them very difficult to work with, and this is the best solution I found */
 
 .material-icons {
     color: #fff !important;
