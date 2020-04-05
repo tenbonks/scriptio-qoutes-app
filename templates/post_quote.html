@@ -19,27 +19,27 @@
 </div>
 
 
-<div class="row">
+<div class="row opaque_bg p_10">
 
-    <form action="{{ url_for('insert_quote') }}" method="POST" class="col s12">
+    <form action="{{ url_for('insert_quote') }}" method="POST"
+        class="col s12 form-container p_10 secondary_purple_bg b_radius white-text">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">notes</i>
-                <textarea name="quote" id="quote icon_quote" class="materialize-textarea" 
-                    class="validate"></textarea>
-                <label for="icon_prefix">Quote</label>
+                <textarea name="quote" id="quote icon_quote" class="materialize-textarea white-text" required="" aria-required="true"></textarea>
+                <label class="white-text"for="icon_prefix">Quote</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">record_voice_over</i>
-                <input name="said_by" id="said_by" type="text" required="" aria-required="true">
+                <input name="said_by" id="said_by" type="text" class="white-text" required="" aria-required="true">
                 <label for="icon_prefix">Said by</label>
             </div>
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">poll</i>
-                <select name="category_name" id="category_name" required="" aria-required="true">
+                <select name="category_name" id="category_name" class="white-text" required="" aria-required="true">
                     <option value="" disabled selected>Choose Category</option>
 
                     {% for cat in categories %}
@@ -47,7 +47,7 @@
                     </option>
                     {% endfor %}
                 </select>
-                <label>Quote Category</label>
+                <label class="white-text">Quote Category</label>
             </div>
 
         </div>
@@ -60,8 +60,13 @@
 
             </div>
         </div>
-
     </form>
+
+
+
+
+
+
 
 </div>
 
