@@ -16,7 +16,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_quotes")
 def get_quotes():
-     return render_template("quotes.html", posts=mongo.db.posts.find().sort("quote", -1))
+     return render_template("quotes.html", posts=mongo.db.posts.find())
 
 @app.route("/post_quote")
 def post_quote():
