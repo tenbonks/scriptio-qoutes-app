@@ -169,4 +169,8 @@ textarea.materialize-textarea,
     box-shadow: 0 1px 0 0 #542344 !important;
 }
 
+/* code below was added by me, targets all drop down text to be white, making it uniform with the rest of the form */
+.select-wrapper input.select-dropdown {
+    color: white;
+}
 /* THE CODE ABOVE IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
