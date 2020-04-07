@@ -68,7 +68,7 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Contact Us</h5>
           <p class="grey-text text-lighten-4">If you need to contact us, simply hit the button below to let us know.</p>
-          <a href="#" class="waves-effect waves-light btn secondary_purple_bg">Contact</a>
+          <a href="#modal-contact" class="waves-effect waves-light btn modal-trigger secondary_purple_bg">Contact</a>
         </div>
       </div>
     </div>
@@ -80,17 +80,70 @@
 
   </footer>
 
-  <!--  LOAD SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('select').formSelect();
-      $('.sidenav').sidenav();
-    });
-  </script>
-  <!--  /LOAD SCRIPTS -->
+  <div id="modal-contact" class="modal">
+    <div class="modal-content secondary_purple_bg">
+      <h4>Contact us</h4>
+      <p>If you want to ask us anything, fill out the form below, hit send, and you will recieve a confirmation email.
+      </p>
+
+
+      <form action="#" method="POST" class="col s12 form-container white-text">
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">record_voice_over</i>
+            <input name="name" id="name" type="text" class="white-text" required="" aria-required="true">
+            <label for="icon_prefix">Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">poll</i>
+            <input name="email" id="email" type="email" class="white-text" required="" aria-required="true">
+            <label for="icon_prefix">Email</label>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">notes</i>
+            <textarea name="message" id="message" class="materialize-textarea white-text" required=""
+              aria-required="true"></textarea>
+            <label class="white-text" for="icon_prefix">Message</label>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col center-align s12 m6">
+            <a class="btn waves-effect waves-light modal-close primary_purple_bg" name="close">Cancel
+              <i class="material-icons right">close</i>
+            </a>
+          </div>
+
+          <div class="col center-align s12 m6">
+            <button class="btn waves-effect waves-light primary_purple_bg" type="submit" name="action">Add
+              <i class="material-icons right">add_comment</i>
+            </button>
+
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+
+    <!--  LOAD SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('select').formSelect();
+        $('.sidenav').sidenav();
+        $('.modal').modal();
+      });
+    </script>
+    <!--  /LOAD SCRIPTS -->
 
 </body>
 
