@@ -16,7 +16,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_quotes")
 def get_quotes():
-     return render_template("quotes.html", posts=mongo.db.posts.find())
+    # Im sorting by id, and descending, this will show posts newest first, due to _id being incremented for each post
+     return render_template("quotes.html", posts=mongo.db.posts.find().sort("_id", -1))
 
 @app.route("/post_quote")
 def post_quote():
