@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, jsonify
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -17,12 +17,30 @@ mongo = PyMongo(app)
 @app.route("/get_quotes")
 def get_quotes():
 
-    quotes = mongo.db.posts.find()
+    quotes = mongo.db.posts
+
+    offset = int(request.args["offset"])
+    limit = int(request.args["limit"])
+
+    starting_id = quotes.find().sort("_id", -1)
+    last_id = starting_id[offset]["_id"] 
+
     total_quotes = quotes.count()
-    sort_quotes = quotes.sort("_id", -1)
-    print(total_quotes)
+    sort_quotes = quotes.find({"_id" : {"$lte" : last_id}}).sort("_id", -1).limit(limit)
+    
+
+    output = []
+
+    for i in sort_quotes:
+        output.append({"_id" : i["_id"],"quote" : i["quote"], "said_by": i["said_by"], "category_name": i["category_name"]})
+        
+    next_url = "/?limit=" + str(limit) + "&offset=" + str(offset + limit)
+    prev_url = "/?limit=" + str(limit) + "&offset=" + str(offset - limit)
+
+    
+    
     # Im sorting by id, and descending, this will show posts newest first, due to _id being incremented for each post
-    return render_template("quotes.html", posts=sort_quotes, total_quotes=total_quotes)
+    return render_template("quotes.html", posts=output, total_quotes=total_quotes)
 
 @app.route("/post_quote")
 def post_quote():
