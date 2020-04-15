@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, jsonify
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_parameter, get_page_args
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
@@ -12,35 +13,28 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 # mongo instance, that will use config vars above
 mongo = PyMongo(app)
 
+def get_quotes_for_paginate(offset=0, per_page=10):
+    thequotes = mongo.db.posts.find().sort("_id", -1)
+    
+    return thequotes[offset: offset + per_page]
+
+
 # this route is for the homepage, its called get_quotes because thats the main function of the page
 @app.route("/")
 @app.route("/get_quotes")
 def get_quotes():
 
-    quotes = mongo.db.posts
-
-    offset = int(request.args["offset"])
-    limit = int(request.args["limit"])
-
-    starting_id = quotes.find().sort("_id", -1)
-    last_id = starting_id[offset]["_id"] 
-
-    total_quotes = quotes.count()
-    sort_quotes = quotes.find({"_id" : {"$lte" : last_id}}).sort("_id", -1).limit(limit)
     
+    total_quotes = mongo.db.posts.find().count()
 
-    output = []
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
+                                        
+    paginated_quotes = get_quotes_for_paginate(offset=offset, per_page=per_page)
+    pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
 
-    for i in sort_quotes:
-        output.append({"_id" : i["_id"],"quote" : i["quote"], "said_by": i["said_by"], "category_name": i["category_name"]})
-        
-    next_url = "/?limit=" + str(limit) + "&offset=" + str(offset + limit)
-    prev_url = "/?limit=" + str(limit) + "&offset=" + str(offset - limit)
-
-    
     
     # Im sorting by id, and descending, this will show posts newest first, due to _id being incremented for each post
-    return render_template("quotes.html", posts=output, total_quotes=total_quotes)
+    return render_template("quotes.html", posts=paginated_quotes, total_quotes=total_quotes, pagination=pagination)
 
 @app.route("/post_quote")
 def post_quote():
