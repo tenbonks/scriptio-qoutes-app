@@ -179,3 +179,8 @@ textarea.materialize-textarea,
 .pagination li.active {
     background-color: #AF929D;
 }
+
+#pagination-info-container {
+    padding-top: 7px;
+    color: #542344   
+}
