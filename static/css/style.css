@@ -174,3 +174,8 @@ textarea.materialize-textarea,
     color: white;
 }
 /* THE CODE ABOVE IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
+
+/* overide the active pagination color */
+.pagination li.active {
+    background-color: #AF929D;
+}
