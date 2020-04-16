@@ -13,9 +13,20 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 # mongo instance, that will use config vars above
 mongo = PyMongo(app)
 
-def get_quotes_for_paginate(offset=0, per_page=10):
+#  the three functions below are very similar, but they differ in what they query
+# this one below is for all quotes, used in the homepage
+def get_all_quotes_for_paginate(offset=0, per_page=10):
     thequotes = mongo.db.posts.find().sort("_id", -1)
-    
+    return thequotes[offset: offset + per_page]
+
+# this function finds quotes by "said_by", this function is called when looking up all quotes said by one person
+def get_quotes_said_by_for_paginate(offset=0, per_page=10, said_by=""):
+    thequotes = mongo.db.posts.find({"said_by": said_by}).sort("_id", -1)
+    return thequotes[offset: offset + per_page]
+
+#  this function will find quotes by category, and will be called when filtering by category
+def get_quotes_in_cat_for_paginate(offset=0, per_page=10, category_name=""):
+    thequotes = mongo.db.posts.find({"category_name": category_name}).sort("_id", -1)
     return thequotes[offset: offset + per_page]
 
 
@@ -29,7 +40,7 @@ def get_quotes():
 
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
                                         
-    paginated_quotes = get_quotes_for_paginate(offset=offset, per_page=per_page)
+    paginated_quotes = get_all_quotes_for_paginate(offset=offset, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
 
     
@@ -90,21 +101,28 @@ def get_categories():
 # ROUTE FOR FILTERING QUOTES BY "CATEGORY"
 @app.route("/filter_quotes/<category_name>")
 def filter_quotes(category_name):
-    quotes = mongo.db.posts
-    res = quotes.find({"category_name": category_name})
-    total_quotes = res.count()
+    total_quotes = mongo.db.posts.find({"category_name": category_name}).count()
     
-    return render_template("filter_quotes.html", posts=res, total_quotes_count=total_quotes,  total_quotes=category_name + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by category")
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
+
+    paginated_quotes=get_quotes_in_cat_for_paginate(offset=offset, per_page=per_page, category_name=category_name)
+    pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
+    
+    return render_template("filter_quotes.html", posts=paginated_quotes, total_quotes_count=total_quotes,pagination=pagination,  total_quotes=category_name + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by category")
     
 
 # ROUTE FOR FILTERING QUOTES BY "SAID_BY"
 @app.route("/quotes_by/<said_by>")
 def quotes_by(said_by):
-    quotes = mongo.db.posts
-    res = quotes.find({"said_by": said_by})
-    total_quotes = res.count()
-    print(total_quotes)
-    return render_template("quotes_by.html", posts=res, total_quotes=said_by + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by name")
+    total_quotes = mongo.db.posts.find({"said_by": said_by}).count()
+
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
+
+    paginated_quotes=get_quotes_said_by_for_paginate(offset=offset, per_page=per_page, said_by=said_by)
+
+    pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
+
+    return render_template("quotes_by.html", posts=paginated_quotes, pagination=pagination, total_quotes=said_by + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by name")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
