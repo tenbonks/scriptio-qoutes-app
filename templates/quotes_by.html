@@ -9,7 +9,7 @@
       </div>
       <hr>
       <div class="white-text">
-        <p>{{ said_by }}</p>
+        <p><b>{{ said_by }}</b></p>
       </div>
     </div>
   </div>
@@ -17,8 +17,12 @@
 
 <div class="opaque_bg">
 
-  <div class="center-align" id="pagination-info-container">
-    {{ pagination.info }}
+  <div class="row my_5px">
+    <div class="col s12">
+      <div class="center-align" id="pagination-info-container">
+        {{ pagination.info }}
+      </div>
+    </div>
   </div>
 
   {% for quote in posts %}
