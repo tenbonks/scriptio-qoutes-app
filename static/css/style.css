@@ -184,3 +184,7 @@ textarea.materialize-textarea,
     padding-top: 7px;
     color: #542344   
 }
+
+#pagination-links {
+    padding: 15px 0;
+}
