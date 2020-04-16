@@ -108,7 +108,7 @@ def filter_quotes(category_name):
     paginated_quotes=get_quotes_in_cat_for_paginate(offset=offset, per_page=per_page, category_name=category_name)
     pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
     
-    return render_template("filter_quotes.html", posts=paginated_quotes, total_quotes_count=total_quotes,pagination=pagination,  total_quotes=category_name + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by category")
+    return render_template("filter_quotes.html", posts=paginated_quotes, total_quotes_count=total_quotes,pagination=pagination,  category_name=category_name, page_title="Filtering quotes by category")
     
 
 # ROUTE FOR FILTERING QUOTES BY "SAID_BY"
@@ -122,7 +122,7 @@ def quotes_by(said_by):
 
     pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
 
-    return render_template("quotes_by.html", posts=paginated_quotes, pagination=pagination, total_quotes=said_by + " | " + str(total_quotes) + " quotes", page_title="Filtering quotes by name")
+    return render_template("quotes_by.html", posts=paginated_quotes, pagination=pagination, said_by=said_by, page_title="Filtering quotes by name")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
