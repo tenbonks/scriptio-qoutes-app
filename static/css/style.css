@@ -24,6 +24,10 @@ body {
     margin: 10px auto;
 }
 
+.my_5px {
+    margin: 5px 0;
+}
+
 /* this style fixes bug with adding margin to each row, this will fill the gap between content and footer */
 .p_bottom_20 {
     padding-bottom: 20px;
@@ -182,7 +186,7 @@ textarea.materialize-textarea,
 
 #pagination-info-container {
     padding-top: 7px;
-    color: #542344   
+    color: #542344; 
 }
 
 #pagination-links {
