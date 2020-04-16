@@ -17,6 +17,10 @@
 
 <div class="opaque_bg">
 
+  <div class="center-align" id="pagination-info-container">
+    {{ pagination.info }}
+  </div>
+
   {% for quote in posts %}
 
   <div class="row">
@@ -49,6 +53,10 @@
   </div>
 
   {% endfor %}
+
+  <div class="center-align">
+    {{ pagination.links }}
+  </div>
 
 </div>
 
