@@ -13,7 +13,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 # mongo instance, that will use config vars above
 mongo = PyMongo(app)
 
-#  the three functions below are very similar, but they differ in what they query
+#  the three functions below are very similar, but they differ in what they query, the querys are sorted descending by _id.
 # this one below is for all quotes, used in the homepage
 def get_all_quotes_for_paginate(offset=0, per_page=10):
     thequotes = mongo.db.posts.find().sort("_id", -1)
@@ -35,7 +35,6 @@ def get_quotes_in_cat_for_paginate(offset=0, per_page=10, category_name=""):
 @app.route("/get_quotes")
 def get_quotes():
 
-    
     total_quotes = mongo.db.posts.find().count()
 
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
@@ -43,8 +42,6 @@ def get_quotes():
     paginated_quotes = get_all_quotes_for_paginate(offset=offset, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total_quotes, record_name='quotes')
 
-    
-    # Im sorting by id, and descending, this will show posts newest first, due to _id being incremented for each post
     return render_template("quotes.html", posts=paginated_quotes, total_quotes=total_quotes, pagination=pagination)
 
 @app.route("/post_quote")
@@ -65,7 +62,7 @@ def insert_quote():
 # this route will be called when a user want to edit a quote
 @app.route('/edit_quote/<quote_id>')
 def edit_quote(quote_id):
-    # set a var to store the target post, targeted by _id
+    # target the single post, find it by the _id provided.
     the_quote = mongo.db.posts.find_one({"_id": ObjectId(quote_id)})
     # used to display all categories on the select element
     all_categories = mongo.db.categories.find()
