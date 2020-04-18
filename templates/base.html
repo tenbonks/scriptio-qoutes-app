@@ -14,6 +14,15 @@
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico' )}}" type="image/x-icon">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
   <!-- /LOAD STYLES -->
+
+  <!-- LOAD EMAILJS BEFORE CLOSING HEAD TAG, AS PER DOCS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_zryNwhPPBjpsX5Jah5OM5");
+    })();
+  </script>
 </head>
 
 <body>
@@ -89,17 +98,17 @@
       </p>
 
 
-      <form action="#" method="POST" class="col s12 form-container white-text">
+      <form onsubmit="return sendMail(this);" class="col s12 form-container white-text">
 
         <div class="row">
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">record_voice_over</i>
-            <input name="name" id="name" type="text" class="white-text" required="" aria-required="true">
+            <input name="from_name" id="from_name" type="text" class="white-text" required="" aria-required="true">
             <label for="icon_prefix">Name</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">poll</i>
-            <input name="email" id="email" type="email" class="white-text" required="" aria-required="true">
+            <input name="from_email" id="from_email" type="email" class="white-text" required="" aria-required="true">
             <label for="icon_prefix">Email</label>
           </div>
 
@@ -123,8 +132,8 @@
           </div>
 
           <div class="col center-align s12 m6">
-            <button class="btn waves-effect waves-light primary_purple_bg" type="submit" name="action">Send
-              <i class="material-icons right">sendt</i>
+            <button class="btn waves-effect waves-light primary_purple_bg" type="submit">Send
+              <i class="material-icons right">send</i>
             </button>
 
           </div>
@@ -145,6 +154,7 @@
         $('.modal').modal();
       });
     </script>
+    <script src="{{ url_for('static', filename='js/sendEmail.js' )}}"></script>
     <!--  /LOAD SCRIPTS -->
 
 </body>
