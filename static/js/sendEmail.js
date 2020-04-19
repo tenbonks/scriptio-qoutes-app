@@ -7,10 +7,12 @@ function sendMail(contactForm) {
     }, "user_zryNwhPPBjpsX5Jah5OM5")
     .then(
         function(response) {
-            console.log("SUCCESS", response);
+            // aslong as the response is ok, the modal will close and reset the values
+            $("#modal-contact").modal("close")
+            document.getElementById("contactForm").reset();
         },
         function(error) {
-            console.log("FAILED", error);
+            alert("FAILED, sorry there was an error on ourside sending the email", error);
         }
     );
     return false;  // To block from loading a new page
