@@ -4,7 +4,7 @@ Hello there! this application is a hub of quotes, where you can enter your own e
 
 Its all just a click away!
 
-**Mama says, life is just like a box of chocolate, you never know what you gonna get.**
+**"Mama says, life is just like a box of chocolate, you never know what you gonna get next"**
 
 # Demo
 
