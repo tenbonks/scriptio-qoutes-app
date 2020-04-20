@@ -79,7 +79,7 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Contact Us</h5>
           <p class="grey-text text-lighten-4">If you need to contact us, simply hit the button below to let us know.</p>
-          <a href="#modal-contact" class="waves-effect waves-light btn modal-trigger secondary_purple_bg">Contact</a>
+          <a href="#modal-contact" class="waves-effect waves-light btn modal-trigger secondary_purple_bg alt-button">Contact</a>
         </div>
       </div>
     </div>
@@ -93,9 +93,11 @@
 
   <div id="modal-contact" class="modal">
     <div class="modal-content secondary_purple_bg">
-      <h4>Contact us</h4>
+      <div class="white-text">
+        <h4>Contact us</h4>
       <p>If you want to ask us anything, fill out the form below, hit send, and you will recieve a confirmation email.
       </p>
+      </div>
 
 
       <form onsubmit="return sendMail(this);" class="col s12 form-container white-text" id="contactForm">
@@ -125,14 +127,14 @@
 
         <div class="row">
 
-          <div class="col center-align s12 m6">
-            <a class="btn waves-effect waves-light modal-close primary_purple_bg" name="close">Cancel
+          <div class="col center-align s6">
+            <a class="btn waves-effect waves-light modal-close primary_purple_bg alt-button" name="close">Cancel
               <i class="material-icons right">close</i>
             </a>
           </div>
 
-          <div class="col center-align s12 m6">
-            <button class="btn waves-effect waves-light primary_purple_bg" type="submit">Send
+          <div class="col center-align s6">
+            <button class="btn waves-effect waves-light primary_purple_bg alt-button" type="submit">Send
               <i class="material-icons right">send</i>
             </button>
 
