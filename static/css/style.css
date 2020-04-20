@@ -91,6 +91,10 @@ body {
     color: white;
 }
 
+.alt-button:hover {
+    background-color: #441d37;
+}
+
 /*  /CUSTOM STYLES */
 
 /*  COLORS + FONTS*/
