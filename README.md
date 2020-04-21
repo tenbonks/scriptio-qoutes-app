@@ -4,7 +4,7 @@ Hello there! this application is a hub of quotes, where you can enter your own e
 
 Its all just a click away!
 
-**"Mama says, life is just like a box of chocolate, you never know what you gonna get next"**
+**"Mama says, life is just like a box of chocolate, you never know what you gonna get"**
 
 # Demo
 
@@ -20,11 +20,15 @@ The design and experience of the site is desinged to be as streamlined as possib
 
 I used a simple color scheme of purple shades, and white, this keeps a clean environment and lets links pop, while still looking uniform and allowing the user to see what they can do, without anything distracting them.
 
-As a FAN OF FILMS, I want to FIND QUOTES FROM FILMS, So I can RELIVE THE CLASSIC MOMENTS
-As a FAN OF OBI-WAN-KENOBi, I want to FIND QUOTES SAID BY HIM, So I can BASK IN THE WISDOM OF THE WISE JEDI
-As a USER WHO FEELS DOWN, I want to FIND MINDFULL/MOTIVATIONAL QUOTES, to HELP WITH MY DAY
+1. As a FAN OF FILMS, I want to FIND QUOTES FROM FILMS, So I can RELIVE THE CLASSIC MOMENTS.
+2. As a FAN OF OBI-WAN-KENOBi, I want to FIND QUOTES SAID BY HIM, So I can BASK IN THE WISDOM OF THE WISE JEDI.
+3. As a USER WHO FEELS DOWN, I want to FIND MINDFULL/MOTIVATIONAL QUOTES, to HELP WITH MY DAY.
+4. As a STUDENT WHOS STUDYING, I want to FIND MOTIVATIONAL QUOTES, to get me through MY STUDIES.
+5. As a LOVER OF QUOTES, I want to LEAVE QUOTES, for others TO ENJOY.
 
-**Wireframe/Mockup can be found in the files of this repository, under the folder "Wireframe/Mockup".**
+**Mockup can be found in the files of this repository, under the folder "Mockup".**
+
+I adapted my wireframe into the mockup, mainly being because I was happy with the wireframe, so I started to style it.
 
 ---
 
@@ -48,46 +52,52 @@ I had done research on how to implement this and would use "bcrypt" package to h
 
 Follow users, this would be implemented in a way where the username would be on each post, so it would be clickable to go to the users page, the users page would have all the quotes left by that user, and would be able to "follow user"
 
-A followed users posts would be shown with priority over normal posts in the homepage, also maybe a individual "followed page" which just shows posts form followed users
+A followed users posts would be shown with priority over normal posts in the homepage, also maybe a individual "followed page" which just shows posts from followed users
 
-As mentioned there would be users, so that would also create a need for a profile page, this would follow the websites design.
+As mentioned there would be users, so that would also create a need for a profile page, this would follow the websites design, I would also add the ability to delete a user, Im not sure if I would keep the deleted users posts, but if I would, I would edit the user field of the post to be a deleted user, this would elimiate an issue where if a new user chose the deleted users username, the posts would not be linked to the new user.
 
 there is a lot that can be developed off having a log in system, but I'm confident that Ive displayed how the website works, without having the system, also note, had there been a log in, only the user who left the post, would be able to edit it.
 
-I had planned on inplementing a login system, and had in my planning, but upon review of requirements for the project, it was out of scope, and it wasnt the aim of the project, Id of liked to add it but it would of taken too much time away from the actual requirements
+I had planned on inplementing a login system, and had in my planning, but upon review of requirements for the project, it was out of scope, and it wasnt the aim of the project, Id of liked to add it but it would of taken too much time away from the actual requirements.
 
 ---
 
 # Technologies used
 
-HTML, CSS, Javascript, Bootstrap 4 framework, jQuery Framework, emailJS , Adobe XD (for design planning).
+HTML, CSS, Javascript, Python (packages, these can be found in requirements.txt), MongoDB, Flask, Materialize Framework, jQuery Framework, Github, Heroku emailJS , Figma (for design planning).
 
-This game was created using HTML5 (HyperTextMarkupLanguage), CSS (Cascading Style Sheets) and JS (JavaScript), all of these play attributes in the actual game. For the actual website I used HTML, CSS, the Bootstrap 4 framework for positioning of elements, along with css to style the page, I used transparent textures in the css to give the site some character.
+The site was created on Flask, this allowed for a very quick and versatile way of development, with the use of HTML to layout my site, and jinja2 templating language to populate the content from mongoDB
 
-* HTML - Used in the structuring of the index.html file, also plays a role in coordinates of drawn shapes in the canvas
+* HTML - Used in the structuring of the of all files within the template folder
 
-- CSS - Is used for the styling of the site, it also draws the background to the canvas game.
+- CSS - Is used for the styling of the site.
 
-- Javascript -  All of the game mechanics are written in Javascript, in fact everything is Javascript within the canvas other than the background, which is css
+- Javascript -  Javacript is used for jQuery, and also for emailJS, this allows user to send a message to me, and also receive a confirmation email if the response was a success,
 
-- Bootstrap 4 - Used to position elements in the DOM, how I implemented the "Contact Modal", also how I display "Device is too small" message if the screen is under the "sm" breakpoint.
+- Python - Is used for configuring the app, getting the data from MongoDB, also used with flask to create routes and functions for the app.
 
-- Jquery - I used jQuery to access some of the DOM elements, for example when "Mute" is clicked the "toggleMute" function will be ran. 
+- Materialize - Used to position elements in the DOM, how I used cards to display each post, a modal for the contact form, materialize forms for any form within the site, buttons for any buttons in the site. I styled all of the elements to fit the site and make them more unique for my project.
+
+- Jquery - I used jQuery to access some of the DOM elements, also for some materialize elements jquery is needed for it to function, I also used it to target the modal, so that if the response from sending a email is ok, then close the modal. 
 
 - emailJS - I used this to send the supplied fields in the contact form to my email address, an auto reply will be sent to confirm the email was received 
 
-- Adobe XD - I used Adobe XD for the Mockup and Wireframe stage of development, I also returned to it to create a *favicon*, as it is easy to work on shapes, and you can specify size in pixels, so I could create a nice purpose built favicon, at 32 x 32 px. 
+- Figma - I used Figma for the design phase of the project, I started with outlines of the layout, and after that I ended up filling them in and refining the elements, it proved very useful especially with deciding on what color scheme I wanted to use, I decided on a 2 tone purple design, which keeps the site uniform and clean throughout.
+
+- MongoDB(noSQL) - Used to store all quotes, a user of Scriptio can perform "crud operations" within the app.
+
+- Github - Used for version control of the app.
+
+- Heroku - Used for deployment of the app.
 
 
 
 --- 
 # Testing
 
-I planned on using the Jasmine Framework for testing the game, but it is mainly DOM manipulation and requires certain conditions to be met while the game is running, so manual testing seemed to be the best option for me to test *"gravBALL"*
+I performed manual tests on Scriptio, during development and once all the functionality was in place
 
-I also sent a link out of the deployed site once it was very close to finish, This was sent via slack, during this I had feedback concerning the canvas not fitting properly on mobile devices, and an issue with the modal form, caused by spacebar being a input to the game, resulting in spacebar not adding spaces.
-Both of these issues have been fixed, I removed spacebar as a control as it wasn't really needed, and added breakpoints in the css to reduce the canvas size while keeping the aspect ratio. The canvas CAN be bit too big to fit vertical in the viewport height of certain mobile phones (Huawei P smart), but in general it works a lot better than it did before and the game is playable on small devices.
-
+I sent a link out through personal messages
 This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, Iphone 4/5/6 and Samsung Galaxy. The only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
 
 <details><summary>CLICK HERE for testing process'</summary>
@@ -170,22 +180,21 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
 
 # Deployment
 
-**The deployment of this site was achieved with "Github Pages", the process I took as follows...**
+**The deployment of this site was achieved with "Heroku", the process I took as follows...**
 
-* I logged into Github, and created a repository, named gravBALL-game-component.
-- I pushed the initial commit, and kept committing and pushing when any minor, or major change had been made that I was happy with.
-- Once I had the initial commit in place, I clicked settings in the repository page on Github.
-- I scrolled down to GitHub Pages section within the settings page
-- Underneath *source*, is a drop-down menu, this is where I selected "master branch".
-- Once "master branch" had been selected, a link to the deployed is provided within the GitHub Pages container.
+* I logged into Github, and created a repository, named scriptio-qoutes-app.
+- I logged into Heroku, created a repository, gave it a matching name from Github, "scriptio-qoutes-app".
+- I created a "Procfile", and "requirements.txt", this is required for the app to work within "Heroku"
+- I pushed the initial commit to Github, and kept committing and pushing when any minor, or major change had been made that I was happy w.
+- I pushed to Heroku, verified that deployment went okay via the log in Heroku, after that I scaled dynos via the terminal.
 
 There is no difference between the deployed version and the development version.
 
 ---
 
-**If you want to run *gravBALL* locally, you can clone this repository into an editor of your choice**
+**If you want to run *Scriptio* locally, you can clone this repository into an editor of your choice**
 
-* Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/gravBALL.git</code>
+* Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/scriptio-qoutes-app.git</code>
 
 - To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin</code>
 
@@ -195,45 +204,25 @@ There is no difference between the deployed version and the development version.
 
 **Content**
 
-All the content in the site, was written by me.
+There is some content written by me within the site, all the things that dont change pretty much.
+All of the quotes at this time were written by me, but all the quotes are named by who said them.
 
 ---
 
 **Media**
 
-gravBALL - Ben Tonks, Github @tenbonks, owner of this repository.
-
-*PaulMorek* via *freesound* | beep when score increments | source - https://freesound.org/people/PaulMorek/sounds/330052/
-
-*suntemple* via *freesound* | game lose noise | https://freesound.org/people/suntemple/sounds/253174/
-
-*leviclaassen* via *freesound* | noise on game start | https://freesound.org/people/leviclaassen/sounds/107786/
-
-*michorvath* via *freesound* | plays on ball bounce | https://freesound.org/people/michorvath/sounds/269718/
+Favicon was created using - https://favicon.io/
 
 Textured Backgrounds - https://www.transparenttextures.com/
 
-Typography - https://fonts.google.com/
+Typography - Nunito font - https://fonts.google.com/
 
 ---
 
 **Acknowledgements**
 
-Chris Deleon for basics in canvas game making, via tennis udemy course - this is where I got most of the logic on how to create a game. - https://www.udemy.com/course/how-to-program-games/
+flask-paginate, this lib is simply amazing - https://pythonhosted.org/Flask-paginate/
 
-Code Explained (Youtube Channel) for inspiration on implementing the pillars, via flappy bird tutorial - https://www.youtube.com/watch?v=L07i4g-zhDA
+Tutors through code-institute, helped with pagination and a modal problem due to using emailJS
 
-Spicy Yoghurt for inspiration on implementing a game loop, via a blog post on spicyyoghurt.com
-
-All gradient CSS styles were made using CSS Gradient, a very useful tool for getting the exact gradient you want - https://cssgradient.io/
-
-MDN - Used as a learning resource - https://developer.mozilla.org/en-US/docs/Web/JavaScript
-
-Slack #interactive-frontend - Used as a learning resource for more obscure questions.
-
-Maranatha Ilesanmi - Valuable guidance as my mentor through this project.
-
-Feedback from these users on the #peer-code-review proved useful in testing and helped pin point the finishing touches that were to be made | @Eventyret_mentor, @Orla Madden, @Zoli. thanks for your time and feedback you provided.
-
-The code in stickyFooter was NOT written by me, and is accredited to "HenryW" on stackoverflow - https://stackoverflow.com/questions/10099422/flushing-footer-to-bottom-of-the-page-twitter-bootstrap
-
+My mentor for valuable sessions during development 
