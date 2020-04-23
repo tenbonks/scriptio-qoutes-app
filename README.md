@@ -97,74 +97,52 @@ The site was created on Flask, this allowed for a very quick and versatile way o
 
 I performed manual tests on Scriptio, during development and once all the functionality was in place
 
-I sent a link out through personal messages
-This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, Iphone 4/5/6 and Samsung Galaxy. The only compatibility issue that appeared was the footer and banner background not loading. This was due to me using "RGB" and setting opacity to it, this was rectified by using "RGBA". No other issues across browsers.
+
 
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
 
-1. gravBall on page load, should display a start screen, if clicked should start to draw the game and update the canvas
-    1. Load the website.
-    2. Check the canvas element to see if the expected function is running (drawStart).
-    3. Click the canvas to see if the gamestate changes as expected (drawGame) is now running.
-    4. This verifies the boot process of the game is working as expected.
+1. The content of the site should resize fluidly to specific breakpoints
+    1. Load the website on a large desktop monitor.
+    2. Check all pages of the site to check the layout is as expected.
+    3. Open developer tools and repeat step 2 at xs, small, medium breakpoints
+    4. The layout is as expected and elements will display to fit the device its being displayed on.
+    5. This verifies that the site is responsive to different screen size, and aspect ratios.
 
-2. Does gravBALL change to "Oops!" (drawLose) screen if collision is detected:
-    1. Click the canvas to start game.
-    2. Let the ball freely bounce until collides with a pillar.
-    3. The canvas changes to "Oops" as expected.
-    4. This verifies that the collision mechanic of the game is working as expected.
+2. If a name is clicked within the quote container, it should filter quotes by selected name:
+    1. Click "Obi-Wan Kenobi" within a quote
+    2. I am sent to a new page, which filters quotes by name, Obi-Wan Kenobi is specified in the heading.
+    3. All quotes by Obi-Wan Kenobi are being displayed.
+    4. I repeated step 1-3 for "Oprah Winfrey" and the expected result was returned
+    5. This verifies that the filter is working as expected
 
-3. I expect there to be no sound, if mute button has been clicked since the page loaded:
-    1. Click the mute button above canvas, and verify the text below the mute button changes to "Sound off".
-    2. Click the canvas to start game. no starting sound was played when canvas was clicked.
-    3. Let the ball freely bounce, no sound on ball bounce.
-    4. Let the ball freely bounce and hit pillar, no sound when a collision is detected.
-    5. Pass an obstacle and there is no sound to indicate the score incrementing.
-    6. Let the ball collide with a pillar to get to the "Oops!" screen, when clicking to restart, no sound is played to indicate the start of the game.
-    7. This verifies that the mute button is working as expected once clicked.
+3. If a category name is clicked within a quote, or withing the categories page, all quotes within category should be returned
+    1. Once the website is loaded, click "Mindfulness"
+    2. Im redirected to a new page which filters quotes by category, Mindfulness is specified in the heading.
+    3. All quotes within the page have the category name of "Mindfulness"
+    4. I repeated this for "Famous" category, and all results were as expected.
+    5. This verifies that the filter for category is working as expected.
 
-4. I expect there to be sound, if mute button has not clicked since page loading:
-    1. Upon loading the text underneath the mute button should read "Sound on", this means sound is on by default as expected.
-    2. Click the canvas to start game. Starting sound was played when canvas was clicked.
-    3. Let the ball freely bounce, Sound was played on ball bounce.
-    4. Let the ball freely bounce and hit pillar, played sound when a collision is detected.
-    5. Pass an obstacle and a sound is played to indicate the score incrementing.
-    6. Let the ball collide with a pillar to get to the "Oops!" screen, when clicking to restart, a sound is played to indicate the start of the game.
-    7. This verifies that by default sound is on, and sound will play as expected when conditions are met.
+4. If no quotes are returned within a category, alert the user that there are none.
+    1. Load the website, and click the nav button for categories.
+    2. Within the categories page, click "Funny" category
+    3. Im redirected to the page which filters quotes by category.
+    4. "Funny" is specified in the heading, and a message within the DOM is present telling the user "Oops, no quotes to be seen here".
+    5. A button is featured underneath to promt the user to add a quote from the same page.
+    6. This verifies that if no quotes are within a category, the user is alerted, and that the this function of the site works.
 
 5. Contact form/modal:
     1. Click the "Contact Me" button in the footer of the page.
     2. Try to submit the empty form and verify that an error message "Please fill in this field." appears
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-    5. If cancel/X in the top right corner, is clicked the *Modal* will close.
+    4. Try to submit the form with all inputs valid and verify that the modal closes.
+    5. If cancel, is clicked the *Modal* will close.
+    6. If the modal is submitted with an "OK" status, then close the modal.
+    7. This verifies that the modal is working as expected, and forms cant be submitted empty.
 
-6. I expect the DOM to display a message saying the screen is too small, and the game canvas not to be displayed, if page is loaded under the small Bootstrap breakpoint:
-    1. Load the page.
-    2. Click on developer tools, and select "Toggle device toolbar" from the options.
-    3. Check the expected message is displayed
-    4. Check the game canvas is not being displayed.
-    5. This is verifies it is functioning as expected.
 
-7. I expect the high score to be kept if the page is reloaded, also for the high score to update if greater than the last.
-    1. Load the page.
-    2. Played the game, got a score of 1.
-    3. Reloaded the page.
-    4. The start screen displays "High Score: 1", also opened developer tools and checked under local storage to see if it was set.
-    5. Local storage "high score" set to "1".
-    6. Repeated step 2, but got a score of 7.
-    7. Reloaded page
-    8. The start screen displays "High Score: 7", also opened developer tools and checked under local storage and "high score" was set to "7".
 
-8. I expect the canvas to not register key input if I've clicked outside of the canvas element
-    1. Load the page.
-    2. Click inside the canvas to start the game.
-    3. Click outside of the canvas once the game has started.
-    4. hold down *spacebar*, the ball freely bounces which means key input isn't being registered
-    5. This verifies it is functioning as as expected.
-
-9. I expect to receive an email if I correctly fill out all fields of the contact modal
+6. I expect to receive an email if I correctly fill out all fields of the contact modal
     1. Fill out the contact form, correctly, as tested in "Test 5", with a different email address to the one emailJS is set up to send to.
     2. Click "Send!" button.
     3. Sign into my gmail account, look at most recent email/s.
@@ -173,6 +151,21 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     6. The auto reply has been received, confirming the email has been sent.
     7. This verifies that the contact modal, is working with emailJS as expected.
 
+
+7. I expect not to be able to submit a post with a field empty.
+    1. Load the page, and proceed to "Add Quote" within the page header.
+    2. Try to submit form with all fields empty and verify a prompt appears to the user to "Fill in field"
+    3. Try to submit a from with no "quote" and verify a prompt appears to the user to "Fill in field"
+    4. Try to submit a from with no "said_by" and verify a prompt appears to the user to "Fill in field"
+    5. Try to submit a from with no "category" selected and verify a prompt appears to the user to "Fill in field"
+    6. This verifies that a post cannot be submitted with a empty field
+
+8. I expect there to be a connection with mongoDB
+    1. Load the page.
+    2. The Home page is being populated with quotes, these are coming from mongoDB
+    3. This means connection is valid upon page load, and is verifies that I am connected to the expected DB
+
+
 </p>
 </details>
 
@@ -180,13 +173,35 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
 
 # Deployment
 
-**The deployment of this site was achieved with "Heroku", the process I took as follows...**
+**I developed Scriptio using VScode on a local machine, I used GitHub for version control, and Heroku for the deployed site**
 
-* I logged into Github, and created a repository, named scriptio-qoutes-app.
-- I logged into Heroku, created a repository, gave it a matching name from Github, "scriptio-qoutes-app".
-- I created a "Procfile", and "requirements.txt", this is required for the app to work within "Heroku"
-- I pushed the initial commit to Github, and kept committing and pushing when any minor, or major change had been made that I was happy w.
-- I pushed to Heroku, verified that deployment went okay via the log in Heroku, after that I scaled dynos via the terminal.
+* Connecting to GitHub 
+- I logged into Github, and created a repository, named scriptio-qoutes-app.
+- I used the CLI to add the created repo to my remotes | `git remote add origin https://github.com/tenbonks/scriptio-qoutes-app.git`
+- Now I am connected to the repo, any small or major changes can be pushed to adhere to good version control.
+
+* Creation of app in heroku, and connection
+- Log in to Heroku (account is required), within the dashboard, click the "new" button featured in the top right of the page.
+- Pick the closest region to you
+- Using the CLI, add the heroku app as the remote master branch | `heroku git: remote a [app name]`
+
+*Deployment to heroku
+- Create app.py, this is the file that heroku will use to start the app
+- Create a requirments.txt (list of packages and dependencies, required for the app to run) | <code>pip freeze > requirements.txt</code> (using pip, not pip3 due to virtual env)
+- Create a Procfile (Information for heroku, on where to start the app) | <code>echo web: python app.py > Procfile</code>
+- Once these were in place, add all files to git, and commit them.
+- Push to Github and Heroku, I used vscode's git interface to streamline this, but a command for this is | <code>git push origin master && git push heroku master</code> 
+- Instruct Heroku to start the app, (scale dynos) | <code>git push origin master && git push heroku master</code>
+- Go back to the app in Heroku, click settings, and youll be able to reveal config vars, I set 2 initially, then added a 3rd later to hide an API KEY.
+- The 2 initial config variables were | IP = 0.0.0.0 | PORT = 5000
+- Within the applications page in Heroku, it can now be opened and the app will run.
+
+
+**If you want to run *Scriptio* locally, you can clone this repository into an editor of your choice**
+
+* Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/scriptio-qoutes-app.git</code>
+
+- To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin</code>
 
 There is no difference between the deployed version and the development version.
 
