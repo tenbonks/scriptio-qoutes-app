@@ -3,7 +3,6 @@ body {
 }
 
 /* SPACING STYLES */
-
 .fill_screen {
     min-height: 85vh;
 }
@@ -48,7 +47,6 @@ body {
 .stretch_w_90 {
     width: 90%;
 }
-
 /* /SPACING STYLES */
 
 /* CUSTOM STYLES */
@@ -138,13 +136,11 @@ strong {
     background-image: url(https://www.transparenttextures.com/patterns/clean-textile.png);
     background-attachment: fixed;
 }
-
 /*  /BACKGROUND IMAGE */
 
 
 /* THE CODE BELOW IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
 /* these styles overide materialize form colors, I found them very difficult to work with, and this is the best solution I found */
-
 .material-icons {
     color: #fff !important;
 }
@@ -181,6 +177,10 @@ textarea.materialize-textarea,
 .select-wrapper input.select-dropdown {
     color: white;
 }
+
+.btn:focus {
+    background-color: #542344;
+}
 /* THE CODE ABOVE IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
 
 /* overide the active pagination color */
@@ -190,7 +190,7 @@ textarea.materialize-textarea,
 
 #pagination-info-container {
     padding-top: 7px;
-    color: #542344; 
+    color: #542344;
 }
 
 #pagination-links {
