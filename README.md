@@ -10,7 +10,7 @@ Its all just a click away!
 
 **A live demo of the site can be found** <a href="#" rel="nofollow" target="_blank">Here!</a>
 
-![Desktop Demo](#)
+![Desktop Demo](https://github.com/tenbonks/scriptio-qoutes-app/blob/master/static/images/screengrab-scriptio.png "Desktop Demo")
 
 ---
 
