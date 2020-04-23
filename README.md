@@ -175,17 +175,17 @@ I performed manual tests on Scriptio, during development and once all the functi
 
 **I developed Scriptio using VScode on a local machine, I used GitHub for version control, and Heroku for the deployed site**
 
-* Connecting to GitHub 
+** Connecting to GitHub **
 - I logged into Github, and created a repository, named scriptio-qoutes-app.
 - I used the CLI to add the created repo to my remotes | `git remote add origin https://github.com/tenbonks/scriptio-qoutes-app.git`
 - Now I am connected to the repo, any small or major changes can be pushed to adhere to good version control.
 
-* Creation of app in heroku, and connection
+** Creation of app in heroku, and connection **
 - Log in to Heroku (account is required), within the dashboard, click the "new" button featured in the top right of the page.
 - Pick the closest region to you
 - Using the CLI, add the heroku app as the remote master branch | `heroku git: remote a [app name]`
 
-*Deployment to heroku
+**Deployment to heroku**
 - Create app.py, this is the file that heroku will use to start the app
 - Create a requirments.txt (list of packages and dependencies, required for the app to run) | <code>pip freeze > requirements.txt</code> (using pip, not pip3 due to virtual env)
 - Create a Procfile (Information for heroku, on where to start the app) | <code>echo web: python app.py > Procfile</code>
