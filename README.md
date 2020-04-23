@@ -166,6 +166,37 @@ I performed manual tests on Scriptio, during development and once all the functi
     3. This means connection is valid upon page load, and is verifies that I am connected to the expected DB
 
 
+9. I expect post to be limited to 10 per page
+    1. Load the page, count the amount of quotes
+    2. Counted 10 quotes, clicked the next page
+    3. Counted another 10 quotes
+    4. the information for the page is also correct in stating 0-10 posts being shown upon initial page load.
+    5. This verifies that pagination is working as expected
+
+10. I expect all the fields of a post to be carried to the form, if clicking edit on a quote
+    1. Load the page, and click edit on one of the quotes
+    2. I am redirected to edit quote page
+    3. All the fields have been carried over as expected
+    4. this verifies that the fields are being supplied when editing a quote
+
+11. I expect that when I edit a field within a quote, it is inserted
+    1. Load the page, click edit on one of the quotes
+    2. I am redirected to edit page.
+    3. I added "(test)" to "Quote" field and hit submit
+    4. I am redirected to the home page, and see that (edit) has been added to selected quote
+    5. This verfies a quote can be edited
+
+12. Can not submit a post within edit with a empty field
+    1. Load the page, click edit on one of the quotes
+    2. I am redirected to edit page.
+    3. I blank out the quote section and try to submit
+    4. A prompt for the user is displayed to "Fill in field"
+    5. I blank out the category.
+    6. A prompt for the user is displayed to "Fill in field", and then the category
+    7. A prompt is displayed on the category to "Fill in field"
+    8. This verifies that a quote needs to have all field filled before it is edited. 
+
+
 </p>
 </details>
 
@@ -219,8 +250,8 @@ There is no difference between the deployed version and the development version.
 
 **Content**
 
-There is some content written by me within the site, all the things that dont change pretty much.
-All of the quotes at this time were written by me, but all the quotes are named by who said them.
+There is some content written by me within the site, all the things that don't change pretty much, so navigation elements and such.
+All of the quotes at this time were written by me, but all the quotes are respectively named by who said them.
 
 ---
 
@@ -228,16 +259,20 @@ All of the quotes at this time were written by me, but all the quotes are named 
 
 Favicon was created using - https://favicon.io/
 
-Textured Backgrounds - https://www.transparenttextures.com/
+Textured Backgrounds - clean-textile - https://www.transparenttextures.com/
 
 Typography - Nunito font - https://fonts.google.com/
+
+
 
 ---
 
 **Acknowledgements**
 
-flask-paginate, this lib is simply amazing - https://pythonhosted.org/Flask-paginate/
+flask-paginate, this lib is simply amazing, and helped a lot during implentation of pagination - https://pythonhosted.org/Flask-paginate/
+
+This demonstration of how to use Flask-Paginate was also very useful - https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
 
 Tutors through code-institute, helped with pagination and a modal problem due to using emailJS
 
-My mentor for valuable sessions during development 
+My mentor, Maranatha Ilesanmi for valuable sessions during key points of development 
