@@ -1,6 +1,6 @@
 # Scriptio | Quotes App
 
-Hello there! this here is Scriptio (*written words in Latin*) is a hub of quotes, where you can post quotes easily, contributing to the quote bank, and also filter quotes, so if you see a quote by someone you like, just click the name and you will be shown all the quotes said by that person, the same for categories, there are many to choose from, whether you want to fill your mind with mindfulness, or maybe just want to see some classics from TV Shows and Movies.
+Hello there! this here is Scriptio, which has a meaning of written words in Latin, is a hub of quotes, where you can post quotes easily, contributing to the quote bank, and also filter quotes, so if you see a quote by someone you like, just click the name and you will be shown all the quotes said by that person, the same for categories, there are many to choose from, whether you want to fill your mind with mindfulness, or maybe just want to see some classics from TV Shows and Movies.
 
 Its all just a click away!
 
@@ -25,22 +25,28 @@ I used a simple color scheme of purple shades, and white, this keeps a clean env
 3. As a USER WHO FEELS DOWN, I want to FIND MINDFULL/MOTIVATIONAL QUOTES, to HELP WITH MY DAY.
 4. As a STUDENT WHOS STUDYING, I want to FIND MOTIVATIONAL QUOTES, to get me through MY STUDIES.
 5. As a LOVER OF QUOTES, I want to LEAVE QUOTES, for others TO ENJOY.
-,
+
+
 **Mockup can be found under the folder "Mockup" in this repo, or [here](https://github.com/tenbonks/scriptio-qoutes-app/blob/master/mockup/Scriptio%20_%20Mockup.png).**
 
-I adapted my wireframe into the mockup, mainly being because I was happy with the wireframe, so I started to style it.
+
+there is no wireframe to show, as I adapted my wireframe into the mockup, mainly being because I was happy with the wireframe, so I started to style it.
 
 ---
 
 # Features
 
-* A simple, and clear desing, which clearly shows what the user can do.
+* A simple, clear and responsive design, which clearly shows what the user can do.
+
+- A vibrant header, with app's logo, navigation buttons, this adapts to sidebar navigation for mobile.
 
 - A paginated response, as to not bog down the system with a high amount of data
 
 - A simple to use filter, just click on a name, or category on a post, or go to categories
 
 - A quote counter so the user can see how many quotes there are in any page, category or said by the same person.
+
+- Full CRUD (Create, Remove, Update, and Delete) operations of a database through the application
 
 - A option to "Contact Me" - For if the user wants to collaborate, or maybe report a bug if found, a confirmation email will be sent to the supplied email address.
 ---
@@ -77,9 +83,9 @@ The site was created on Flask, this allowed for a very quick and versatile way o
 
 - Python - Is used for configuring the app, getting the data from MongoDB, also used with flask to create routes and functions for the app.
 
-- Materialize - Used to position elements in the DOM, how I used cards to display each post, a modal for the contact form, materialize forms for any form within the site, buttons for any buttons in the site. I styled all of the elements to fit the site and make them more unique for my project.
+- Materialize - Used to position elements in the DOM, how I used cards to display each post, a modal for the contact form, materialize forms for any form within the site, buttons for any buttons in the site, toasts are also used within the site. I styled all of the elements to fit the site and make them more unique for my project.
 
-- Jquery - I used jQuery to access some of the DOM elements, also for some materialize elements jquery is needed for it to function, I also used it to target the modal, so that if the response from sending a email is ok, then close the modal. 
+- Jquery - I used jQuery to access some of the DOM elements, also for some materialize elements jquery is needed for it to function, I also used it to target the modal within emailJS.js. 
 
 - emailJS - I used this to send the supplied fields in the contact form to my email address, an auto reply will be sent to confirm the email was received 
 
@@ -92,7 +98,6 @@ The site was created on Flask, this allowed for a very quick and versatile way o
 - Heroku - Used for deployment of the app.
 
 
-
 --- 
 # Testing
 
@@ -100,8 +105,7 @@ I performed manual tests on Scriptio, during development and once all the functi
 
 I validated my HTML using W3C HTML Validation Service, This returned some errors, but these are caused by using template language within the html, so these are accounted for and aren't a problem. I also validated my css with W3C CSS Validation Service, and this validated at CSS Level 3 + SVG.
 
-I tested Scriptio on Chrome through development, and to the point it was ready for submission, it was tested
-on 
+This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, such as  the Iphone 4/5/6 and Samsung Galaxy, aswell as the breakpoints.
 
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
