@@ -1,10 +1,10 @@
 # Scriptio | Quotes App
 
-Hello there! this application is a hub of quotes, where you can enter your own easily, contributing to the quote bank, and also filter quotes easily, so if you see a quote by someone you like, just click his name and you will be shown all the quotes said by that person, the same for categories, there are many to choose from, wether you want to fill your mind with mindfulness, or maybe just want to see some classics from Tv shows and movies.
+Hello there! this here is Scriptio (*written words in Latin*) is a hub of quotes, where you can post quotes easily, contributing to the quote bank, and also filter quotes, so if you see a quote by someone you like, just click the name and you will be shown all the quotes said by that person, the same for categories, there are many to choose from, whether you want to fill your mind with mindfulness, or maybe just want to see some classics from TV Shows and Movies.
 
 Its all just a click away!
 
-**"Mama says, life is just like a box of chocolate, you never know what you gonna get"**
+*"Mama says, life is just like a box of chocolate, you never know what you gonna' get"*
 
 # Demo
 
@@ -44,21 +44,22 @@ I adapted my wireframe into the mockup, mainly being because I was happy with th
 
 - A option to "Contact Me" - For if the user wants to collaborate, or maybe report a bug if found, a confirmation email will be sent to the supplied email address.
 ---
+
 **Features to implement in the future**
 
-There is a fair bit to be covered here, due to the nature of my site, for perfect implentation I would need to implement a log in system, I had this in mind but due to it being out of scope of the milestone project, it wasnt placed too high.
+There is a fair bit to be covered here, due to the nature of my site, for perfect implentation I would need to implement a log in system, I had this in mind during development but due to it being out of scope of the milestone project, it wasn't a priority.
 
-I had done research on how to implement this and would use "bcrypt" package to hash passwords, there are some features that would come from having a login system, such as the ability to...
+I had done research on how to implement this had it of been implemented, I would of used "bcrypt" library to hash passwords to keep them secure, there are some features that would come from having a login system, such as the ability to...
+
+This is the biggest issues that comes from not having a log in system, and that is user authentication, currently anyone can edit and delete comments, and this would be an issue in real world application, and that is understood, but it isn't the focus of this project.
 
 Follow users, this would be implemented in a way where the username would be on each post, so it would be clickable to go to the users page, the users page would have all the quotes left by that user, and would be able to "follow user"
 
 A followed users posts would be shown with priority over normal posts in the homepage, also maybe a individual "followed page" which just shows posts from followed users
 
-As mentioned there would be users, so that would also create a need for a profile page, this would follow the websites design, I would also add the ability to delete a user, Im not sure if I would keep the deleted users posts, but if I would, I would edit the user field of the post to be a deleted user, this would elimiate an issue where if a new user chose the deleted users username, the posts would not be linked to the new user.
+As mentioned there would be users, so that would also create a need for a profile page, this would follow the websites design, I would also add the ability to delete a user, Im not sure if I would keep the deleted users posts, but if I would, I would edit the user field of the post to read "Delted User" or similar, this would elimiate an issue where if a new user chose the deleted users username when creating account, the posts would not be linked to the new user.
 
-there is a lot that can be developed off having a log in system, but I'm confident that Ive displayed how the website works, without having the system, also note, had there been a log in, only the user who left the post, would be able to edit it.
-
-I had planned on inplementing a login system, and had in my planning, but upon review of requirements for the project, it was out of scope, and it wasnt the aim of the project, Id of liked to add it but it would of taken too much time away from the actual requirements.
+there is a lot that can be developed off having a log in system, but I'm confident that Ive displayed the data-centric side of my project, in the way that it handles data left by a user, without having the system.
 
 ---
 
@@ -95,9 +96,12 @@ The site was created on Flask, this allowed for a very quick and versatile way o
 --- 
 # Testing
 
-I performed manual tests on Scriptio, during development and once all the functionality was in place
+I performed manual tests on Scriptio, during development and once all the functionality was in place, please click the dropdown below for the processes I took.
 
+I validated my HTML using W3C HTML Validation Service, This returned some errors, but these are caused by using template language within the html, so these are accounted for and aren't a problem. I also validated my css with W3C CSS Validation Service, and this validated at CSS Level 3 + SVG.
 
+I tested Scriptio on Chrome through development, and to the point it was ready for submission, it was tested
+on 
 
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
@@ -173,8 +177,9 @@ I performed manual tests on Scriptio, during development and once all the functi
     4. the information for the page is also correct in stating 0-10 posts being shown upon initial page load.
     5. This verifies that pagination is working as expected
 
+
 10. I expect all the fields of a post to be carried to the form, if clicking edit on a quote
-    1. Load the page, and click edit on one of the quotes
+    1. Load the page, and click edit on one of the quotestenbo
     2. I am redirected to edit quote page
     3. All the fields have been carried over as expected
     4. this verifies that the fields are being supplied when editing a quote
@@ -196,7 +201,12 @@ I performed manual tests on Scriptio, during development and once all the functi
     7. A prompt is displayed on the category to "Fill in field"
     8. This verifies that a quote needs to have all field filled before it is edited. 
 
-
+13. I expect pagination not to have page links if less than 10 quotes return
+    1. Load the page and click "categories" nav button in header
+    2. Click on the "Video Games" Button
+    3. Pagination info displaying 1-1, quotes in total 1
+    4. Check under the content for pagination links, there are none
+    5. This verifies my expectations
 </p>
 </details>
 
@@ -206,12 +216,12 @@ I performed manual tests on Scriptio, during development and once all the functi
 
 **I developed Scriptio using VScode on a local machine, I used GitHub for version control, and Heroku for the deployed site**
 
-** Connecting to GitHub **
+**Connecting to GitHub**
 - I logged into Github, and created a repository, named scriptio-qoutes-app.
 - I used the CLI to add the created repo to my remotes | `git remote add origin https://github.com/tenbonks/scriptio-qoutes-app.git`
 - Now I am connected to the repo, any small or major changes can be pushed to adhere to good version control.
 
-** Creation of app in heroku, and connection **
+**Creation of app in heroku, and connection**
 - Log in to Heroku (account is required), within the dashboard, click the "new" button featured in the top right of the page.
 - Pick the closest region to you
 - Using the CLI, add the heroku app as the remote master branch | `heroku git: remote a [app name]`
@@ -223,7 +233,7 @@ I performed manual tests on Scriptio, during development and once all the functi
 - Once these were in place, add all files to git, and commit them.
 - Push to Github and Heroku, I used vscode's git interface to streamline this, but a command for this is | <code>git push origin master && git push heroku master</code> 
 - Instruct Heroku to start the app, (scale dynos) | <code>git push origin master && git push heroku master</code>
-- Go back to the app in Heroku, click settings, and youll be able to reveal config vars, I set 2 initially, then added a 3rd later to hide an API KEY.
+- Go back to the app in Heroku, click settings, and you'll be able to reveal config vars, I set 2 initially, then added a 3rd later to hide my MONGODB_URI.
 - The 2 initial config variables were | IP = 0.0.0.0 | PORT = 5000
 - Within the applications page in Heroku, it can now be opened and the app will run.
 
@@ -232,19 +242,14 @@ I performed manual tests on Scriptio, during development and once all the functi
 
 * Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/scriptio-qoutes-app.git</code>
 
+- To install libraries for Python, create a virtual environment(for local machines), and use this code -  <code>pip install -r requirements.txt</code>
+
 - To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin</code>
 
 There is no difference between the deployed version and the development version.
 
 ---
 
-**If you want to run *Scriptio* locally, you can clone this repository into an editor of your choice**
-
-* Paste this into the editors terminal - <code>git clone https://github.com/tenbonks/scriptio-qoutes-app.git</code>
-
-- To cut ties with this GitHub repository, type this into the terminal - <code>git remote rm origin</code>
-
----
 
 # Credits
 
