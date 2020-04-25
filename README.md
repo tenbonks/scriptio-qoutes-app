@@ -10,7 +10,7 @@ Its all just a click away!
 
 **A live demo of the site can be found** <a href="https://scriptio-qoutes-app.herokuapp.com/" rel="nofollow" target="_blank">Here!</a>
 
-![Desktop Demo](https://github.com/tenbonks/scriptio-qoutes-app/blob/master/static/images/screengrab-scriptio.png "Desktop Demo")
+![Desktop Demo](https://github.com/tenbonks/scriptio-qoutes-app/blob/master/static/images/scriptio-screengrab.png "Desktop Demo")
 
 ---
 
@@ -25,8 +25,8 @@ I used a simple color scheme of purple shades, and white, this keeps a clean env
 3. As a USER WHO FEELS DOWN, I want to FIND MINDFULL/MOTIVATIONAL QUOTES, to HELP WITH MY DAY.
 4. As a STUDENT WHOS STUDYING, I want to FIND MOTIVATIONAL QUOTES, to get me through MY STUDIES.
 5. As a LOVER OF QUOTES, I want to LEAVE QUOTES, for others TO ENJOY.
-
-**Mockup can be found in the files of this repository, under the folder "Mockup".**
+,
+**Mockup can be found under the folder "Mockup" in this repo, or [here](https://github.com/tenbonks/scriptio-qoutes-app/blob/master/mockup/Scriptio%20_%20Mockup.png).**
 
 I adapted my wireframe into the mockup, mainly being because I was happy with the wireframe, so I started to style it.
 
@@ -40,18 +40,18 @@ I adapted my wireframe into the mockup, mainly being because I was happy with th
 
 - A simple to use filter, just click on a name, or category on a post, or go to categories
 
-- A quote counter so the user can see how many quotes there are in any page
+- A quote counter so the user can see how many quotes there are in any page, category or said by the same person.
 
 - A option to "Contact Me" - For if the user wants to collaborate, or maybe report a bug if found, a confirmation email will be sent to the supplied email address.
 ---
 
 **Features to implement in the future**
 
-There is a fair bit to be covered here, due to the nature of my site, for perfect implentation I would need to implement a log in system, I had this in mind during development but due to it being out of scope of the milestone project, it wasn't a priority.
+There is a fair bit to be covered here, due to the nature of my site, for perfect implementation I would need a log in system, I had this in mind during development but due to it being out of scope/not a requirement for this milestone project, it wasn't a priority.
 
-I had done research on how to implement this had it of been implemented, I would of used "bcrypt" library to hash passwords to keep them secure, there are some features that would come from having a login system, such as the ability to...
+I had done research on how to implement this had it of been, I would of used "bcrypt" library to hash passwords to keep them secure, there are some features that would come from having a login system, such as the ability to...
 
-This is the biggest issues that comes from not having a log in system, and that is user authentication, currently anyone can edit and delete comments, and this would be an issue in real world application, and that is understood, but it isn't the focus of this project.
+This is the biggest issue that comes from not having a log in system, and that is user authentication, currently anyone can edit and delete comments, and this would be an issue in real world application, and that is understood, I would of liked to add it purely for the defensive design, but it isn't the focus of this project.
 
 Follow users, this would be implemented in a way where the username would be on each post, so it would be clickable to go to the users page, the users page would have all the quotes left by that user, and would be able to "follow user"
 
@@ -262,13 +262,13 @@ All of the quotes at this time were written by me, but all the quotes are respec
 
 **Media**
 
-Favicon was created using - https://favicon.io/
+Favicon was created using using favicon.io | https://favicon.io/
 
-Textured Backgrounds - clean-textile - https://www.transparenttextures.com/
+Textured Backgrounds - clean-textile | https://www.transparenttextures.com/
 
-Typography - Nunito font - https://fonts.google.com/
+Typography - Nunito font | https://fonts.google.com/
 
-
+Logo was created using logomakr | https://logomakr.com/
 
 ---
 
