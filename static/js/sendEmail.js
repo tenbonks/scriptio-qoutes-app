@@ -10,9 +10,10 @@ function sendMail(contactForm) {
             // aslong as the response is ok, the modal will close and reset the values
             $("#modal-contact").modal("close")
             document.getElementById("contactForm").reset();
+            M.toast({html: 'Sent!'})
         },
         function(error) {
-            alert("FAILED, sorry there was an error on ourside sending the email", error);
+            M.toast({html: "Error!", error});
         }
     );
     return false;  // To block from loading a new page
