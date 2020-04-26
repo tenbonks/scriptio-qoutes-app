@@ -134,7 +134,7 @@ strong {
 /* BACKGROUND IMAGE */
 .bg_img {
     background-color: #fff;
-    background-image: url(https://www.transparenttextures.com/patterns/diagmonds.png );
+    background-image: url(../images/diagmonds.png);
     background-attachment: fixed;
 }
 
