@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 # set config variables for mongodb connection
 app.config["MONGO_DBNAME"] = "scriptio"
+#  MONGDB_URI is set within heroku config vars
 app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 
 # mongo instance, that will use config vars above
@@ -30,7 +31,6 @@ def get_quotes_in_cat_for_paginate(offset=0, per_page=10, category_name=""):
     return thequotes[offset: offset + per_page]
 
 
-# this route is for the homepage, its called get_quotes because thats the main function of the page
 @app.route("/")
 @app.route("/get_quotes")
 def get_quotes():
@@ -49,27 +49,25 @@ def post_quote():
         return render_template("post_quote.html", categories=mongo.db.categories.find())
 
 
-# The function below will be called when submitting the form in post_quote
+
 @app.route("/insert_quote", methods=["POST"])
 def insert_quote():
-    # target mongoDB posts, insert data from form into target
+    
     quotes = mongo.db.posts
     quotes.insert_one(request.form.to_dict())
-    # redirect to get quotes, which will render get_quotes.html
+    
     return redirect(url_for("get_quotes"))
 
 
-# this route will be called when a user want to edit a quote
 @app.route('/edit_quote/<quote_id>')
 def edit_quote(quote_id):
     # target the single post, find it by the _id provided.
     the_quote = mongo.db.posts.find_one({"_id": ObjectId(quote_id)})
-    # used to display all categories on the select element
+    # code below is for the select element
     all_categories = mongo.db.categories.find()
     return render_template("edit_quote.html", quote=the_quote, categories=all_categories)
 
 
-# this route will be called when submitting edit_quote form 
 @app.route("/update_quote/<quote_id>", methods=["POST"])
 def update_quote(quote_id):
     quotes = mongo.db.posts
@@ -83,10 +81,8 @@ def update_quote(quote_id):
     return redirect(url_for("get_quotes"))
 
 
-# this route will be called when firing delete button on edit_quote.html
 @app.route("/delete_quote/<quote_id>")
 def delete_quote(quote_id):
-    # remove post with matching id, then redirect to get_quotes
     mongo.db.posts.remove({"_id": ObjectId(quote_id)})
     return redirect(url_for("get_quotes"))
 
@@ -95,7 +91,6 @@ def get_categories():
     return render_template("get_categories.html", categories=mongo.db.categories.find())
 
 
-# ROUTE FOR FILTERING QUOTES BY "CATEGORY"
 @app.route("/filter_quotes/<category_name>")
 def filter_quotes(category_name):
     total_quotes = mongo.db.posts.find({"category_name": category_name}).count()
@@ -108,7 +103,6 @@ def filter_quotes(category_name):
     return render_template("filter_quotes.html", posts=paginated_quotes, total_quotes_count=total_quotes,pagination=pagination,  category_name=category_name, page_title="Filtering quotes by category")
     
 
-# ROUTE FOR FILTERING QUOTES BY "SAID_BY"
 @app.route("/quotes_by/<said_by>")
 def quotes_by(said_by):
     total_quotes = mongo.db.posts.find({"said_by": said_by}).count()
