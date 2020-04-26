@@ -47,6 +47,7 @@ body {
 .stretch_w_90 {
     width: 90%;
 }
+
 /* /SPACING STYLES */
 
 /* CUSTOM STYLES */
@@ -136,6 +137,7 @@ strong {
     background-image: url(https://www.transparenttextures.com/patterns/diagmonds.png );
     background-attachment: fixed;
 }
+
 /*  /BACKGROUND IMAGE */
 
 
@@ -181,6 +183,7 @@ textarea.materialize-textarea,
 .btn:focus {
     background-color: #542344;
 }
+
 /* THE CODE ABOVE IS ACCREDITED TO "Let's Yo" on "stackoverflow" */
 
 /* overide the active pagination color */
