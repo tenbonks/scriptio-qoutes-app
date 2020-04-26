@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="input-field col s12 white-text">
                         <i class="material-icons prefix">notes</i>
-                        <textarea name="quote" id="quote icon_quote" required="" class="materialize-textarea white-text"
+                        <textarea name="quote" id="quote icon_quote" required class="materialize-textarea white-text"
                             value="{{quote.quote}}">{{ quote.quote }}</textarea>
                         <label for="icon_prefix" class="white-text">Quote</label>
                     </div>
@@ -36,14 +36,14 @@
                 <div class="row">
                     <div class="input-field col s12 m6 white-text">
                         <i class="material-icons prefix">record_voice_over</i>
-                        <input name="said_by" id="said_by" type="text" class="white-text" required=""
+                        <input name="said_by" id="said_by" type="text" class="white-text" required
                             value="{{ quote.said_by }}">
                         <label for="icon_prefix" class="white-text">Said by</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix white-text">poll</i>
                         <select name="category_name" id="category_name">
-                            <option value="" class="white-text" required="" disabled selected>Choose Category</option>
+                            <option value="" class="white-text" required disabled selected>Choose Category</option>
 
                             {% for cat in categories %}
                             {% if cat.category_name == quote.category_name %}

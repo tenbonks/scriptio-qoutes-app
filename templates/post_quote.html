@@ -26,7 +26,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">notes</i>
-                <textarea name="quote" id="quote icon_quote" class="materialize-textarea white-text" required=""
+                <textarea name="quote" id="quote icon_quote" class="materialize-textarea white-text" required
                     aria-required="true"></textarea>
                 <label class="white-text" for="icon_prefix">Quote</label>
             </div>
@@ -35,16 +35,16 @@
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">record_voice_over</i>
-                <input name="said_by" id="said_by" type="text" class="white-text" required="" aria-required="true">
+                <input name="said_by" id="said_by" type="text" class="white-text" required aria-required="true">
                 <label for="icon_prefix">Said by</label>
             </div>
             <div class="input-field col s12 m6">
                 <i class="material-icons prefix">poll</i>
-                <select name="category_name" id="category_name" class="white-text" required="" aria-required="true">
+                <select name="category_name" id="category_name" class="white-text" required aria-required="true">
                     <option value="" disabled selected>Choose Category</option>
 
                     {% for cat in categories %}
-                    <option value="{{ cat.category_name }}" required="" aria-required="true">{{ cat.category_name }}
+                    <option value="{{ cat.category_name }}" >{{ cat.category_name }}
                     </option>
                     {% endfor %}
                 </select>
