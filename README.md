@@ -1,4 +1,4 @@
-# Scriptio | Quotes App
+# ![alt text](https://github.com/tenbonks/scriptio-qoutes-app/blob/master/static/images/scriptio-logo.png) | Quotes App
 
 Hello there! this here is Scriptio, which has a meaning of written words in Latin, is a hub of quotes, where you can post quotes easily, contributing to the quote bank, and also filter quotes, so if you see a quote by someone you like, just click the name and you will be shown all the quotes said by that person, the same for categories, there are many to choose from, whether you want to fill your mind with mindfulness, or maybe just want to see some classics from TV Shows and Movies.
 
