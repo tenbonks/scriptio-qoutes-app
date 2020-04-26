@@ -117,4 +117,5 @@ def quotes_by(said_by):
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port=(os.environ.get("PORT")))
+    port=(os.environ.get("PORT")),
+    debug=False)
