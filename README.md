@@ -105,7 +105,7 @@ I performed manual tests on Scriptio, during development and once all the functi
 
 I validated my HTML using W3C HTML Validation Service, This returned some errors, but these are caused by using template language within the html, so these are accounted for and aren't a problem. I also validated my css with W3C CSS Validation Service, and this validated at CSS Level 3 + SVG.
 
-This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, such as  the Iphone 4/5/6 and Samsung Galaxy, aswell as the breakpoints.
+This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, such as  the Iphone 4/5/6 and Samsung Galaxy, aswell as the media breakpoints.
 
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
@@ -266,22 +266,24 @@ All of the quotes at this time were written by me, but all the quotes are respec
 
 **Media**
 
-Favicon was created using using favicon.io | https://favicon.io/
+Favicon was created using using [favicon.io](https://favicon.io/)
 
-Textured Backgrounds - clean-textile | https://www.transparenttextures.com/
+[Textured Backgrounds](https://www.transparenttextures.com/) - diagmonds (dark), created by [INS](https://www.flickr.com/photos/ins) 
 
-Typography - Nunito font | https://fonts.google.com/
+Typography - Nunito font | [Google Fonts](https://fonts.google.com/)
 
-Logo was created using logomakr | https://logomakr.com/
+Logo was created using [logomakr](https://logomakr.com/)
 
 ---
 
 **Acknowledgements**
 
-flask-paginate, this lib is simply amazing, and helped a lot during implentation of pagination - https://pythonhosted.org/Flask-paginate/
+[flask-paginate](https://pythonhosted.org/Flask-paginate/), this lib is simply amazing, and helped a lot during implentation of pagination
 
-This demonstration of how to use Flask-Paginate was also very useful - https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+This demonstration repository on Github of how to use Flask-Paginate was also very useful - https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
 
 Tutors through code-institute, helped with pagination and a modal problem due to using emailJS
+
+Users on slack for bits of knowlege, and also to mention "Paul F_alumni" for taking time to look over my project in peer-code-review channel. 
 
 My mentor, Maranatha Ilesanmi for valuable sessions during key points of development 
