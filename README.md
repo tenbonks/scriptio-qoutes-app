@@ -107,6 +107,8 @@ I validated my HTML using W3C HTML Validation Service, This returned some errors
 
 This site was tested on multiple popular browsers, such as Chrome, Safari, Internet Explorer, FireFox, I also used the "Device Toolbar" in dev tools to emulate a variety of mobile devices, such as  the Iphone 4/5/6 and Samsung Galaxy, aswell as the media breakpoints.
 
+I noticed a bug, within the form in post_quote, the prompt does not appear for select if I hadn't selected a value and tries to submit the form, I tried to find out what was the cause of this, but was unable to find the problem.
+
 <details><summary>CLICK HERE for testing process'</summary>
 <p>
 
@@ -147,7 +149,6 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     5. If cancel, is clicked the *Modal* will close.
     6. If the modal is submitted with an "OK" status, then close the modal.
     7. This verifies that the modal is working as expected, and forms cant be submitted empty.
-
 
 
 6. I expect to receive an email if I correctly fill out all fields of the contact modal
@@ -202,7 +203,7 @@ This site was tested on multiple popular browsers, such as Chrome, Safari, Inter
     4. A prompt for the user is displayed to "Fill in field"
     5. I blank out the category.
     6. A prompt for the user is displayed to "Fill in field", and then the category
-    7. A prompt is displayed on the category to "Fill in field"
+    7. It is not possible to edit the select to a null value
     8. This verifies that a quote needs to have all field filled before it is edited. 
 
 13. I expect pagination not to have page links if less than 10 quotes return
